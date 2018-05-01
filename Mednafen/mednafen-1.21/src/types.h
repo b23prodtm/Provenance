@@ -13,29 +13,17 @@
  #include <config.h>
 #endif
 
-#ifndef __LP64__
-#undef SIZEOF_LONG
-#undef SIZEOF_PTRDIFF_T
-#undef SIZEOF_SIZE_T
-#undef SIZEOF_VOID_P
-// SIZEOF_PTRDIFF_T SIZEOF_SIZE_T SIZEOF_VOID_P
-#define SIZEOF_LONG 4
-#define SIZEOF_PTRDIFF_T 4
-#define SIZEOF_SIZE_T 4
-#define SIZEOF_VOID_P 4
+//
+//
+//
+
+#ifdef __USING_SJLJ_EXCEPTIONS__
+ #error "SJLJ-style exception handling will incur a significant performance penalty even when exceptions are not thrown, and thus an alternative(e.g. DWARF) should be used if at all possible."
 #endif
-
-//
-//
-//
-
-//#ifdef __USING_SJLJ_EXCEPTIONS__
-// #error "SJLJ-style exception handling will incur a significant performance penalty even when exceptions are not thrown, and thus an alternative(e.g. DWARF) should be used if at all possible."
-//#endif
 
 #if defined(__PIC__) || defined(__pic__) || defined(__PIE__) || defined(__pie__)
  #if defined(__386__) || defined(__i386__) || defined(__i386) || defined(_M_IX86) || defined(_M_I386) //|| (SIZEOF_VOID_P <= 4)
-  #warning "Compiling with position-independent code generation enabled is not recommended, for performance reasons."
+  #error "Compiling with position-independent code generation enabled is not recommended, for performance reasons."
  #else
   #warning "Compiling with position-independent code generation enabled is not recommended, for performance reasons."
  #endif
