@@ -1,0 +1,94 @@
+# iOS CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/ios-migrating-from-1-2/ for more details
+#
+version: 2
+jobs:
+  build:
+    # Specify the Xcode version to use
+    macos:
+      xcode: "9.3.1"
+    environment:
+      LANG: en_US.UTF-8
+      LC_ALL: en_US.UTF-8
+      WORKSPACE_NAME: "Provenance.xcworkspace"
+      PROJECT_NAME: "Provenance.xcodeproj"
+      SCHEME_IOS_APP: "Provenance"
+      SCHEME_TVOS_APP: "Provenance-TV"
+      IOS_PLATFORM: "iOS Simulator"
+      TVOS_PLATFORM: "tvOS Simulator"
+      IOS_SDK: iphonesimulator11.3
+      TVOS_SDK: appletvsimulator11.3
+    steps:
+      - checkout
+      - run: git submodule update --init
+
+      # Install Carthage
+      - run:
+          name: Install Carthage
+          command: brew install carthage
+      - run:
+          name: install swift and Carthage
+          command: |
+            brew update
+            if [[ `brew outdated swiftlint`]]
+              brew upgrade swiftlint;
+            fi
+            if [[ `brew outdated carthage` ]]
+              brew upgrade carthage;
+            fi
+      - run:
+          name: bootstrap the dependencies for the project
+          command: |
+            cd PVSupport
+            carthage bootstrap --verbose --no-use-binaries --platform iOS --cache-builds
+            carthage bootstrap --verbose --no-use-binaries --platform tvOS --cache-builds
+            cd ..
+      # Build the app and run tests
+      - run:
+          name: Build and run tests
+          environment:
+            ONLY_ACTIVE_ARCH: YES
+            CODE_SIGNING_REQUIRED: NO
+          command: |
+            swiftlint
+            fastlane gym --verbose --workspace "$WORKSPACE_NAME" --scheme "$SCHEME" --destination "$DESTINATION" --sdk "$SDK"
+            fastlane scan
+
+      # Collect XML test results data to show in the UI,
+      # and save the same XML files under test-results folder
+      # in the Artifacts tab
+      - store_test_results:
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: scan-test-results
+      - store_artifacts:
+          path: ~/Library/Logs/scan
+          destination: scan-logs
+workflows:
+  version: 2
+  build_iPhone:
+    jobs:
+      - build:
+          context: group-iphone
+          # environment:
+          #   SCHEME: $SCHEME_IOS_APP
+          #   SDK: $IOS_SDK
+          #   DESTINATION: "platform=$IOS_PLATFORM,OS=11.3,name=iPhone X" SCHEME="$SCHEME" SDK="$SDK"
+          filters:
+            branches:
+              only:
+                - develop
+                - /feature.*/
+                - continuously
+  build_tvOS:
+    jobs:
+      - build:
+          context: group-tv
+          # environment:
+          #   SCHEME: $SCHEME_TVOS_APP
+          #   SDK: $TVOS_SDK
+          #   DESTINATION: "platform=$TVOS_PLATFORM,OS=11.3,name=Apple TV 1080p" SCHEME="$SCHEME" SDK="$SDK"
+          filters:
+            branches:
+              only: develop
