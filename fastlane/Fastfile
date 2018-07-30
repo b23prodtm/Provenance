@@ -22,3 +22,11 @@ platform :ios do
     upload_to_testflight
   end
 end
+
+platform :tvos do
+  desc "Push a new beta build to TestFlight"
+  lane :beta do
+    build_app(workspace: "Provenance.xcworkspace", scheme: "ProvenanceTV-Release", output_name: "ProvenanceTV.ipa")
+    upload_to_testflight
+  end
+end
