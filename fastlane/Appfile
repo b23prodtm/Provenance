@@ -1,7 +1,7 @@
-app_identifier("com.provenance-emu.provenancejm") # The bundle identifier of your app
+app_identifier("info.descom-online.provenancebt") # The bundle identifier of your app
 apple_id("b23prodtm@gmail.com") # Your Apple email address
 
-itc_team_id("10795") # iTunes Connect Team ID
+itc_team_id("") # iTunes Connect Team ID
 team_id("9SC9QXFQBZ") # Developer Portal Team ID
 
 # For more information about the Appfile, see:
