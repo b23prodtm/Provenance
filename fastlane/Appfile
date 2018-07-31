@@ -15,12 +15,13 @@ team_id(ENV["DEV_TEAM_ID"]) # Developer Portal Team ID
 #   app_identifier "org.wikimedia.wikipedia.tfalpha"
 # end
 #
+dev_domain = ENV["DEV_DOMAIN"]
 for_lane 'beta' do
   for_platform :ios do
-       app_identifier "#{ENV['DEV_DOMAIN']}.provenancebt"
+      app_identifier "#{dev_domain}.provenancebt"
   end
   for_platform :tvos do
-        app_identifier "#{ENV['DEV_DOMAIN']}.provenancetvbt"
+      app_identifier "#{dev_domain}.provenancetvbt"
   end
 end
 #
