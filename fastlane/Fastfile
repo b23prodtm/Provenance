@@ -1,11 +1,32 @@
-lane :beta do
-  get_certificates(
-    development: true,
-    username: ENV["APPLE_ID"],
-    team_id: ENV["DEV_TEAM_ID"]
-  )           # invokes cert
-  get_provisioning_profile   # invokes sigh
-  build_app(scheme: "Provenance")
-  upload_to_testflight
-  slack(message: "Successfully distributed a new beta build")
+add_extra_platforms(
+  platforms: [:tvos]
+)
+default_platform(:ios)
+
+platform :ios do
+  lane :beta do
+    get_certificates(
+      development: true,
+      username: ENV["APPLE_ID"],
+      team_id: ENV["DEV_TEAM_ID"]
+    )           # invokes cert
+    get_provisioning_profile(force: true)   # invokes sigh
+    build_app(scheme: "Provenance")
+    upload_to_testflight
+    slack(message: "Successfully distributed a new beta iOS build")
+  end
+end
+
+platform :tvos do
+  lane :beta do
+    get_certificates(
+      development: true,
+      username: ENV["APPLE_ID"],
+      team_id: ENV["DEV_TEAM_ID"]
+    )           # invokes cert
+    get_provisioning_profile(force: true)   # invokes sigh
+    build_app(scheme: "ProvenanceTV")
+    upload_to_testflight
+    slack(message: "Successfully distributed a new beta tvOS build")
+  end
 end
