@@ -330,8 +330,8 @@ platform :ios do
       scheme: 'Provenance', # Scheme really means target
       display_name: display_name,
       block: proc do |plist|
-        bunldeid = plist["PRODUCT_BUNDLE_IDENTIFIER"]
-        bunldeid[:PRODUCT_BUNDLE_IDENTIFIER] = "#{bunldeid})#{suffix}"
+        bundleid = plist["PRODUCT_BUNDLE_IDENTIFIER"]
+        bundleid[:PRODUCT_BUNDLE_IDENTIFIER] = "#{bundleid}#{suffix}"
       end
       # app_identifier: "#{dev_domain}.provenance#{suffix}",
     )
@@ -341,8 +341,8 @@ platform :ios do
       xcodeproj: 'Provenance.xcodeproj',
       scheme: 'Spotlight',
       block: proc do |plist|
-        bunldeid = plist["PRODUCT_BUNDLE_IDENTIFIER"]
-        bunldeid[:PRODUCT_BUNDLE_IDENTIFIER] = "#{bunldeid})#{suffix}.Spotlight"
+        bundleid = plist["PRODUCT_BUNDLE_IDENTIFIER"]
+        bundleid[:PRODUCT_BUNDLE_IDENTIFIER] = "#{bundleid}#{suffix}.Spotlight"
       end
       # app_identifier: normal ? "$(PRODUCT_BUNDLE_IDENTIFIER)" : "#{dev_domain}.provenance${suffix}.Spotlight",
     )
@@ -354,8 +354,8 @@ platform :ios do
       scheme: 'ProvenanceTV',
       display_name: display_name,
       block: proc do |plist|
-        bunldeid = plist["PRODUCT_BUNDLE_IDENTIFIER"]
-        bunldeid[:PRODUCT_BUNDLE_IDENTIFIER] = "#{bunldeid})#{suffix}"
+        bundleid = plist["PRODUCT_BUNDLE_IDENTIFIER"]
+        bundleid[:PRODUCT_BUNDLE_IDENTIFIER] = "#{bundleid}#{suffix}"
       end
       # app_identifier: normal ? "$(PRODUCT_BUNDLE_IDENTIFIER)" : "#{dev_domain}.provenance#{suffix}",
     )
@@ -365,8 +365,8 @@ platform :ios do
       xcodeproj: 'Provenance.xcodeproj',
       scheme: 'TopShelf',
       block: proc do |plist|
-        bunldeid = plist["PRODUCT_BUNDLE_IDENTIFIER"]
-        bunldeid[:PRODUCT_BUNDLE_IDENTIFIER] = "#{bunldeid})#{suffix}.topshelf"
+        bundleid = plist["PRODUCT_BUNDLE_IDENTIFIER"]
+        bundleid[:PRODUCT_BUNDLE_IDENTIFIER] = "#{bundleid}#{suffix}.topshelf"
       end
       # app_identifier: normal ? "$(PRODUCT_BUNDLE_IDENTIFIER)" : "#{dev_domain}.provenance#{suffix}.topshelf"
     )
