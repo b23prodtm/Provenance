@@ -1,11 +1,11 @@
 import("keys")
 
 
-apple_id(ENV["APPLE_ID"]) # Your Apple email address
+apple_id ENV["APPLE_ID"] # Your Apple email address
 
 # TODO If not blank
-# itc_team_id(ENV["ITC_TEAM_ID"]) # iTunes Connect Team ID
-team_id(ENV["DEV_TEAM_ID"]) # Developer Portal Team ID
+# itc_team_id ENV["ITC_TEAM_ID"] # iTunes Connect Team ID
+team_id ENV["DEV_TEAM_ID"] # Developer Portal Team ID
 
 # For more information about the Appfile, see:
 #     https://docs.fastlane.tools/advanced/#appfile
@@ -15,13 +15,17 @@ team_id(ENV["DEV_TEAM_ID"]) # Developer Portal Team ID
 #   app_identifier "org.wikimedia.wikipedia.tfalpha"
 # end
 #
-dev_domain = ENV["DEV_DOMAIN"]
+ugs ENV["app_ugs_id"]
+ugstv ENV["app_ugs_id"]
+
+app_identifier "#{ugs}" 
+
 for_lane 'beta' do
   for_platform :ios do
-      app_identifier "#{dev_domain}.provenancebt"
+      app_identifier "#{ugs}bt"
   end
   for_platform :tvos do
-      app_identifier "#{dev_domain}.provenancetvbt"
+      app_identifier "#{ugstv}bt"
   end
 end
 #
