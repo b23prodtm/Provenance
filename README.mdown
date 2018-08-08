@@ -26,6 +26,7 @@ To get started, please follow the [Installation](https://github.com/Provenance-E
 
 <sup>If you run into trouble, check the [Frequently Asked Questions](https://github.com/Provenance-Emu/Provenance/wiki/Frequently-Asked-Questions) and please read up on our [Issues Usage](https://github.com/Provenance-Emu/Provenance/wiki/Issues-Usage) first, before posting any new issues.</sup>
 
+[![Nevercode build status](https://app.nevercode.io/api/projects/72688bd8-9a65-43a1-bd9c-f0c79e8ce590/workflows/febc69c9-7cf8-4fc5-9a7d-815d104a2a6e/status_badge.svg?branch=feature%2FCore-Beetle-Saturn)](https://app.nevercode.io/#/project/72688bd8-9a65-43a1-bd9c-f0c79e8ce590/workflow/febc69c9-7cf8-4fc5-9a7d-815d104a2a6e/latestBuild?branch=feature%2FCore-Beetle-Saturn) [![Build Status](https://app.bitrise.io/app/281b3168bfac9221/status.svg?token=jiU6FrOeHdGu8AwBorPZgg&branch=feature/Core-Beetle-Saturn)](https://app.bitrise.io/app/281b3168bfac9221)
 
 ### Why 'Provenance'?
 
