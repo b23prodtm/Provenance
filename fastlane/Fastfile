@@ -212,7 +212,7 @@ platform :ios do
     # upload_to_testflight
 
     # Build tvOS app
-    # match(app_identifier: ["#{dev_domain}.provenance", "#{dev_domain}.provenance.topshelf"], type: "adhoc", platform: "tvos")
+    # match(app_identifier: ["#{dev_domain}.provenance", "#{dev_domain}.provenance.tvos.Topshelf"], type: "adhoc", platform: "tvos")
     # carthage(
     #   command: "bootstrap",
     #   platform: "tvOS",
@@ -352,7 +352,7 @@ platform :ios do
       scheme: 'ProvenanceTV',
       block: proc do |plist|
         id = plist["PRODUCT_BUNDLE_IDENTIFIER"]
-        app_identifier = "#{id}#{suffix}"
+        app_identifier = "#{id}#{suffix}.tvos"
       end
       # app_identifier: normal ? "$(PRODUCT_BUNDLE_IDENTIFIER)" : "#{dev_domain}.provenance#{suffix}",
     )
@@ -363,9 +363,9 @@ platform :ios do
       scheme: 'TopShelf',
       block: proc do |plist|
         id = plist["PRODUCT_BUNDLE_IDENTIFIER"]
-        app_identifier = "#{id}#{suffix}.topshelf"
+        app_identifier = "#{id}#{suffix}.tvos.Topshelf"
       end
-      # app_identifier: normal ? "$(PRODUCT_BUNDLE_IDENTIFIER)" : "#{dev_domain}.provenance#{suffix}.topshelf"
+      # app_identifier: normal ? "$(PRODUCT_BUNDLE_IDENTIFIER)" : "#{dev_domain}.provenance#{suffix}.tvos.Topshelf"
     )
   end
 
@@ -376,7 +376,7 @@ platform :ios do
     # types "appstore", "development", "adhoc", "enterprise"
     type = options[:type]
     match(app_identifier: ["#{dev_domain}.provenance", "#{dev_domain}.provenance.Spotlight"], type: type, readonly: false, platform: "ios")
-    match(app_identifier: ["#{dev_domain}.provenance", "#{dev_domain}.provenance.topshelf"], type: type, readonly: false, platform: "tvos")
+    match(app_identifier: ["#{dev_domain}.provenance", "#{dev_domain}.provenance.tvos.Topshelf"], type: type, readonly: false, platform: "tvos")
   end
 
   desc "Create Certs for Match"
@@ -394,7 +394,7 @@ platform :ios do
     # types "appstore", "development", "adhoc", "enterprise"
     type = options[:type]
     match(app_identifier: ["#{dev_domain}.provenance", "#{dev_domain}.provenance.Spotlight"], type: type, readonly: false, platform: "ios")
-    match(app_identifier: ["#{dev_domain}.provenance", "#{dev_domain}.provenance.topshelf"], type: type, readonly: false, platform: "tvos")
+    match(app_identifier: ["#{dev_domain}.provenance", "#{dev_domain}.provenance.tvos.Topshelf"], type: type, readonly: false, platform: "tvos")
   end
 
   desc "Update device list"

@@ -3274,7 +3274,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = info.b23prodtm.provenance.Topshelf;
+				PRODUCT_BUNDLE_IDENTIFIER = info.b23prodtm.provenance.tvos.Topshelf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = appletvos;
@@ -3323,7 +3323,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = info.b23prodtm.provenance.Topshelf;
+				PRODUCT_BUNDLE_IDENTIFIER = info.b23prodtm.provenance.tvos.Topshelf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = appletvos;
@@ -3372,7 +3372,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = info.b23prodtm.provenance.Topshelf;
+				PRODUCT_BUNDLE_IDENTIFIER = info.b23prodtm.provenance.tvos.Topshelf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = appletvos;
