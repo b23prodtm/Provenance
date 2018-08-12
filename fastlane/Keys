@@ -1,6 +1,6 @@
 # Copy this file to `keys` with values filled or run the setup fastlane script 'fastlane setup'
 ENV["APPLE_ID"] = "b23prodtm@gmail.com"
-ENV["DEV_DOMAIN"] = "info.descom-online" #Replace with your own in same format
+ENV["DEV_DOMAIN"] = "info.b23prodtm" #Replace with your own in same format
 ## Optional
 
 # Fill these out if you belong to multiple teams

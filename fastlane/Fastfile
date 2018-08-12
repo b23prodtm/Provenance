@@ -320,7 +320,6 @@ platform :ios do
     load_keys
     normal = options[:normal]
     suffix = normal ? "" : ".alpha"
-    display_name = normal ? "$(APP_DISPLAY_NAME)" : '$(APP_DISPLAY_NAME) α' # or Beta β
     dev_domain = ENV["DEV_DOMAIN"]
 
     # -- Update bundle names and ids
@@ -328,10 +327,9 @@ platform :ios do
     update_info_plist(
       xcodeproj: 'Provenance.xcodeproj',
       scheme: 'Provenance', # Scheme really means target
-      display_name: display_name,
       block: proc do |plist|
-        bunldeid = plist["PRODUCT_BUNDLE_IDENTIFIER"]
-        bunldeid[:PRODUCT_BUNDLE_IDENTIFIER] = "#{bunldeid})#{suffix}"
+        id = plist["PRODUCT_BUNDLE_IDENTIFIER"]
+        app_identifier = "#{id}#{suffix}"
       end
       # app_identifier: "#{dev_domain}.provenance#{suffix}",
     )
@@ -341,8 +339,8 @@ platform :ios do
       xcodeproj: 'Provenance.xcodeproj',
       scheme: 'Spotlight',
       block: proc do |plist|
-        bunldeid = plist["PRODUCT_BUNDLE_IDENTIFIER"]
-        bunldeid[:PRODUCT_BUNDLE_IDENTIFIER] = "#{bunldeid})#{suffix}.Spotlight"
+        id = plist["PRODUCT_BUNDLE_IDENTIFIER"]
+        app_identifier = "#{id}#{suffix}.Spotlight"
       end
       # app_identifier: normal ? "$(PRODUCT_BUNDLE_IDENTIFIER)" : "#{dev_domain}.provenance${suffix}.Spotlight",
     )
@@ -352,10 +350,9 @@ platform :ios do
     update_info_plist(
       xcodeproj: 'Provenance.xcodeproj',
       scheme: 'ProvenanceTV',
-      display_name: display_name,
       block: proc do |plist|
-        bunldeid = plist["PRODUCT_BUNDLE_IDENTIFIER"]
-        bunldeid[:PRODUCT_BUNDLE_IDENTIFIER] = "#{bunldeid})#{suffix}"
+        id = plist["PRODUCT_BUNDLE_IDENTIFIER"]
+        app_identifier = "#{id}#{suffix}"
       end
       # app_identifier: normal ? "$(PRODUCT_BUNDLE_IDENTIFIER)" : "#{dev_domain}.provenance#{suffix}",
     )
@@ -365,8 +362,8 @@ platform :ios do
       xcodeproj: 'Provenance.xcodeproj',
       scheme: 'TopShelf',
       block: proc do |plist|
-        bunldeid = plist["PRODUCT_BUNDLE_IDENTIFIER"]
-        bunldeid[:PRODUCT_BUNDLE_IDENTIFIER] = "#{bunldeid})#{suffix}.topshelf"
+        id = plist["PRODUCT_BUNDLE_IDENTIFIER"]
+        app_identifier = "#{id}#{suffix}.topshelf"
       end
       # app_identifier: normal ? "$(PRODUCT_BUNDLE_IDENTIFIER)" : "#{dev_domain}.provenance#{suffix}.topshelf"
     )
@@ -378,8 +375,8 @@ platform :ios do
 
     # types "appstore", "development", "adhoc", "enterprise"
     type = options[:type]
-    match(app_identifier: ["#{dev_domain}.provenance", "#{dev_domain}.Spotlight"], type: type, readonly: false, platform: "ios")
-    match(app_identifier: ["#{dev_domain}.provenance", "#{dev_domain}.topshelf"], type: type, readonly: false, platform: "tvos")
+    match(app_identifier: ["#{dev_domain}.provenance", "#{dev_domain}.provenance.Spotlight"], type: type, readonly: false, platform: "ios")
+    match(app_identifier: ["#{dev_domain}.provenance", "#{dev_domain}.provenance.topshelf"], type: type, readonly: false, platform: "tvos")
   end
 
   desc "Create Certs for Match"
