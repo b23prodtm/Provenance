@@ -421,11 +421,7 @@ class PVGameLibraryViewController: UIViewController, UITextFieldDelegate, UINavi
         }
     }
 
-	#if os(tvOS)
 	var focusedGame : PVGame?
-    #else
-    var focusedGame = nil
-    #endif
 
 	#if os(iOS)
 	@objc

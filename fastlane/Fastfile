@@ -212,7 +212,7 @@ platform :ios do
     # upload_to_testflight
 
     # Build tvOS app
-    # match(app_identifier: ["#{dev_domain}.provenance", "#{dev_domain}.provenance.tvos.Topshelf"], type: "adhoc", platform: "tvos")
+    # match(app_identifier: ["#{dev_domain}.provenance.tvos", "#{dev_domain}.provenance.tvos.Topshelf"], type: "adhoc", platform: "tvos")
     # carthage(
     #   command: "bootstrap",
     #   platform: "tvOS",
@@ -346,7 +346,6 @@ platform :ios do
     )
 
     # - tvOS
-    # Use the same bundle ID as iOS so it's 'universal install'
     update_info_plist(
       xcodeproj: 'Provenance.xcodeproj',
       scheme: 'ProvenanceTV',
@@ -354,7 +353,7 @@ platform :ios do
         id = plist["PRODUCT_BUNDLE_IDENTIFIER"]
         app_identifier = "#{id}#{suffix}.tvos"
       end
-      # app_identifier: normal ? "$(PRODUCT_BUNDLE_IDENTIFIER)" : "#{dev_domain}.provenance#{suffix}",
+      # app_identifier: normal ? "$(PRODUCT_BUNDLE_IDENTIFIER)" : "#{dev_domain}.provenance.tvos#{suffix}",
     )
 
     # - Top Shelf
@@ -377,7 +376,7 @@ platform :ios do
     type = options[:type]
     readonly = options[:readonly]
     match(app_identifier: ["#{dev_domain}.provenance", "#{dev_domain}.provenance.Spotlight"], type: type, readonly: readonly, platform: "ios")
-    match(app_identifier: ["#{dev_domain}.provenance", "#{dev_domain}.provenance.tvos.Topshelf"], type: type, readonly: readonly, platform: "tvos")
+    match(app_identifier: ["#{dev_domain}.provenance.tvos", "#{dev_domain}.provenance.tvos.Topshelf"], type: type, readonly: readonly, platform: "tvos")
   end
 
   desc "Create Certs for Match"
@@ -396,7 +395,7 @@ platform :ios do
     type = options[:type]
     readonly = options[:readonly]
     match(app_identifier: ["#{dev_domain}.provenance", "#{dev_domain}.provenance.Spotlight"], type: type, readonly: readonly, platform: "ios")
-    match(app_identifier: ["#{dev_domain}.provenance", "#{dev_domain}.provenance.tvos.Topshelf"], type: type, readonly: readonly, platform: "tvos")
+    match(app_identifier: ["#{dev_domain}.provenance.tvos", "#{dev_domain}.provenance.tvos.Topshelf"], type: type, readonly: readonly, platform: "tvos")
   end
 
   desc "Update device list"
@@ -535,6 +534,33 @@ platform :ios do
     )
 
     pilot(app_identifier: "#{dev_domain}.provenance")
+
+    build_app(
+      workspace: "Provenance.xcworkspace",
+      scheme: "ProvenanceTV",
+      export_method: "app-store", # Method used to export the archive. Valid values are: app-store, ad-hoc, package, enterprise, development, developer-id
+      configuration: "Release",
+      # codesigning_identity: "iPhone Developer",#{}"Joe Mattiello", "iPhone Distribution"
+      clean: false,
+      silent: true,
+      #output_directory: output_directory,
+      #output_name: ipa_name,
+      include_bitcode: false,
+      include_symbols: true,
+      #xcargs: activeArchOnly ? "-arch arm64 ONLY_ACTIVE_ARCH=YES" : "",
+      export_options: {
+        method: "app-store",
+        manifest: {
+          appURL: "https://www.provenance-emu.com/builds/#{ipa_name}",
+        },
+        provisioningProfiles: {
+          "#{dev_domain}.provenance.tvos" => "match AppStore #{dev_domain}.provenance.tvos", # match AdHoc match AppStore match Development
+          "#{dev_domain}.provenance.tvos.Topshelf" => "match AppStore #{dev_domain}.provenance.tvos.Topshelf"
+        }
+      }
+    )
+
+    pilot(app_identifier: "#{dev_domain}.provenance.tvos")
   end
 
   # private_lane :versionIcon do

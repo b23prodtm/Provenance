@@ -28,6 +28,7 @@ protocol JSButtonDisplayer {
     var selectButton: JSButton? { get set }
 }
 
+private typealias Keys = SystemDictionaryKeys.ControllerLayoutKeys
 private let kDPadTopMargin: CGFloat = 96.0
 private let gripControl = false
 
@@ -161,8 +162,7 @@ class PVControllerViewController<T: ResponderClient> : UIViewController, Control
 
     var system: PVSystem
     var controlLayout: [ControlLayoutEntry]
-    
-    typealias Keys = SystemDictionaryKeys.ControllerLayoutKeys
+
     var dPad: JSDPad?
     var dPad2: JSDPad?
     var buttonGroup: UIView?

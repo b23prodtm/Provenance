@@ -135,6 +135,7 @@
 		337A46FE20A2024200616097 /* PVYabause.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337A46FD20A2024200616097 /* PVYabause.framework */; };
 		337A470A20A206B400616097 /* PVYabause.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337A470920A206B400616097 /* PVYabause.framework */; };
 		337A470B20A206B400616097 /* PVYabause.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 337A470920A206B400616097 /* PVYabause.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		338AFF712120B55000E90DEB /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 338AFF702120B55000E90DEB /* GameController.framework */; };
 		378F4A001B63D7CD0065FA39 /* GCDWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 378F49DF1B63D7CD0065FA39 /* GCDWebServer.m */; };
 		378F4A011B63D7CD0065FA39 /* GCDWebServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 378F49E11B63D7CD0065FA39 /* GCDWebServerConnection.m */; };
 		378F4A021B63D7CD0065FA39 /* GCDWebServerFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 378F49E31B63D7CD0065FA39 /* GCDWebServerFunctions.m */; };
@@ -586,6 +587,7 @@
 		337A46FD20A2024200616097 /* PVYabause.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PVYabause.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		337A470420A202C100616097 /* PVYabause.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PVYabause.framework; path = "../../Library/Developer/Xcode/DerivedData/Provenance-fycqgcqtrywlgvewxvxqqvljmodg/Build/Products/Release-iphoneos/PVYabause.framework"; sourceTree = "<group>"; };
 		337A470920A206B400616097 /* PVYabause.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PVYabause.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		338AFF702120B55000E90DEB /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS11.4.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		33FA275E20F2A7A100E5E865 /* Provenance-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Provenance-Prefix.pch"; sourceTree = "<group>"; };
 		378F49DE1B63D7CD0065FA39 /* GCDWebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServer.h; sourceTree = "<group>"; };
 		378F49DF1B63D7CD0065FA39 /* GCDWebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServer.m; sourceTree = "<group>"; };
@@ -863,6 +865,7 @@
 				B3C04B5921077E1000E7AF79 /* PVLibrary.framework in Frameworks */,
 				1AD4822F1BA359DA00FDA50A /* OpenGLES.framework in Frameworks */,
 				B3C9D5E41DEA8AED0068D057 /* PVStella.framework in Frameworks */,
+				338AFF712120B55000E90DEB /* GameController.framework in Frameworks */,
 				1AD4822B1BA359C800FDA50A /* GLKit.framework in Frameworks */,
 				B36CBFEB20397D9100728482 /* PVMednafen.framework in Frameworks */,
 				1AD482291BA359BA00FDA50A /* AudioToolbox.framework in Frameworks */,
@@ -987,6 +990,7 @@
 		1A3D409617B2DCE4004DFFFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				338AFF702120B55000E90DEB /* GameController.framework */,
 				3321F665211B94AB00138C8E /* CocoaLumberjackSwift.framework */,
 				3321F663211B948A00138C8E /* Realm.framework */,
 				3321F661211B948600138C8E /* RealmSwift.framework */,
@@ -1791,6 +1795,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.GameControllers.appletvos = {
+								enabled = 1;
+							};
 						};
 					};
 					1AD9AA341ACC988F00EC87A0 = {
@@ -2584,10 +2591,7 @@
 				INFOPLIST_FILE = Provenance/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				OTHER_CFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					" ",
-				);
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1  ";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = info.b23prodtm.provenance;
 				PRODUCT_NAME = "$(TARGET_NAME)";

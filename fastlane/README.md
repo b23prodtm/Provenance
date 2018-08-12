@@ -65,7 +65,7 @@ Add proper badge to icon
 ```
 fastlane ios certificates
 ```
-Setup Certs for Match - New Devs
+Setup Certs for Match - New Devs - Readonly
 ### ios create_certificates
 ```
 fastlane ios create_certificates
