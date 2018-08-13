@@ -12,14 +12,14 @@ team_id ENV["DEV_TEAM_ID"] # Developer Portal Team ID
 #   app_identifier "org.wikimedia.wikipedia.tfalpha"
 # end
 #
-app_identifier "info.descom-online.provenance" #app store connect bundle id (XC)
+app_identifier "info.b23prodtm.provenance" #app store connect bundle id (XC)
 
 for_lane 'beta' do
   for_platform :ios do
-      app_identifier "info.descom-online.provenance"
+      app_identifier "info.b23prodtm.provenance"
   end
   for_platform :tvos do
-      app_identifier "info.descom-online.provenancetv"
+      app_identifier "info.b23prodtm.provenance.tvos"
   end
 end
 #
