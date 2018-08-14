@@ -95,21 +95,21 @@ fastlane carthage_bootstrap
 ```
 Lane to run bootstrap carthage in new checkout
 
-Option: `platform` tvOS,iOS
+Option: `platform` tvos,ios
 ### carthage_build
 ```
 fastlane carthage_build
 ```
 Lane to run build all carthage dependencies
 
-Option: `platform` tvOS,iOS
+Option: `platform` tvos,ios
 ### carthage_update
 ```
 fastlane carthage_update
 ```
 Lane to update all carthage dependencies to latest versions
 
-Option: `platform` tvOS,iOS
+Option: `platform` tvos,ios
 
 ----
 

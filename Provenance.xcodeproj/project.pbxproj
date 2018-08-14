@@ -1790,7 +1790,7 @@
 					1AD481B31BA350A400FDA50A = {
 						CreatedOnToolsVersion = 7.1;
 						LastSwiftMigration = 0920;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -2515,9 +2515,6 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = ProvenanceTV/Provenance.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=appletvsimulator*]" = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 9SC9QXFQBZ;
@@ -2567,9 +2564,6 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = ProvenanceTV/Provenance.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=appletvsimulator*]" = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 9SC9QXFQBZ;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2591,7 +2585,10 @@
 				INFOPLIST_FILE = Provenance/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1  ";
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					" ",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = info.b23prodtm.provenance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2621,10 +2618,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = ProvenanceTV/Provenance.entitlements;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvsimulator*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 9SC9QXFQBZ;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2658,6 +2653,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = info.b23prodtm.provenance.tvos;
 				PRODUCT_NAME = Provenance;
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc info.b23prodtm.provenance.tvos";
 				SDKROOT = appletvos;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OBJC_BRIDGING_HEADER = "ProvenanceTV-Bridging-Header.h";
@@ -2682,9 +2678,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = ProvenanceTV/Provenance.entitlements;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9SC9QXFQBZ;
@@ -2720,6 +2715,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = info.b23prodtm.provenance.tvos;
 				PRODUCT_NAME = Provenance;
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc info.b23prodtm.provenance.tvos";
 				SDKROOT = appletvos;
 				SWIFT_OBJC_BRIDGING_HEADER = "ProvenanceTV-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -2742,9 +2738,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = ProvenanceTV/Provenance.entitlements;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9SC9QXFQBZ;
@@ -2780,6 +2775,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = info.b23prodtm.provenance.tvos;
 				PRODUCT_NAME = Provenance;
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc info.b23prodtm.provenance.tvos";
 				SDKROOT = appletvos;
 				SWIFT_OBJC_BRIDGING_HEADER = "ProvenanceTV-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -3026,9 +3022,6 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = ProvenanceTV/Provenance.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=appletvsimulator*]" = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9SC9QXFQBZ;
@@ -3105,8 +3098,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = Spotlight/Spotlight.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 9SC9QXFQBZ;
@@ -3132,7 +3123,6 @@
 				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-function-bodies=200 -Xfrontend -warn-long-expression-type-checking=200";
 				PRODUCT_BUNDLE_IDENTIFIER = info.b23prodtm.provenance.Spotlight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc info.b23prodtm.provenance.Spotlight";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG EXTENSION";
@@ -3158,8 +3148,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = Spotlight/Spotlight.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -3210,8 +3198,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = Spotlight/Spotlight.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -3258,9 +3244,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = TopShelf/TopShelf.entitlements;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 9SC9QXFQBZ;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -3286,7 +3271,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = info.b23prodtm.provenance.tvos.Topshelf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "TopShelf-Bridging-Header.h";
@@ -3305,9 +3290,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = TopShelf/TopShelf.entitlements;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9SC9QXFQBZ;
@@ -3335,7 +3319,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = info.b23prodtm.provenance.tvos.Topshelf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "TopShelf-Bridging-Header.h";
@@ -3354,9 +3338,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = TopShelf/TopShelf.entitlements;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9SC9QXFQBZ;
@@ -3384,7 +3367,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = info.b23prodtm.provenance.tvos.Topshelf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "TopShelf-Bridging-Header.h";
