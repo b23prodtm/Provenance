@@ -237,6 +237,7 @@ end
   end
 
   desc "Option: `platform` tvos,ios"
+  desc "Option: `export_method` adhoc,app-store,development"
   private_lane :pre_build do |options|
     #get_certificates           # invokes cert
     #get_provisioning_profile   # invokes sigh
@@ -256,7 +257,8 @@ end
     setup_certificates_private
 
     # temporarily disable automatic code signing
-    codesign_toggle(automatic: false)
+    export_method = options.fetch(:export_method, "adhoc")
+    codesign_toggle(automatic: false, export_method: export_method)
 
     carthage_update(options)
   end
@@ -264,7 +266,7 @@ end
   desc "Push a new beta build to TestFlight"
   lane :all_beta do
     platform = ENV["FASTLANE_PLATFORM_NAME"]
-    pre_build(platform: platform)
+    pre_build(platform: platform, export_method: "app-store")
     build_appstore(platform: platform)
     reset_enviroment
   end
@@ -356,31 +358,41 @@ end
     dev_domain = ENV["DEV_DOMAIN"]
     automatic = options[:automatic]
     team_id = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
+    export_method = options.fetch(:export_method, "adhoc")
+    profile_name = "AdHoc"
+    code_sign_identity = "iPhone Distribution"
+    if export_method == "app-store"
+      profile_name = "AppStore"
+    end
+    if export_method == "development"
+      profile_name = "Development"
+      code_sign_identity = "iPhone Development"
+    end
     disable_automatic_code_signing(path: "Provenance.xcodeproj",
       targets: ["Provenance"],
-      code_sign_identity: "iPhone Distribution",
-      profile_name: "match AdHoc #{dev_domain}.provenance",
+      code_sign_identity: "#{code_sign_identity}",
+      profile_name: "match #{profile_name} #{dev_domain}.provenance",
       bundle_identifier: "#{dev_domain}.provenance",
       use_automatic_signing: automatic,
       team_id: team_id)
     disable_automatic_code_signing(path: "Provenance.xcodeproj",
       targets: ["Spotlight"],
-      code_sign_identity: "iPhone Distribution",
-      profile_name: "match AdHoc #{dev_domain}.provenance.Spotlight",
+      code_sign_identity: "#{code_sign_identity}",
+      profile_name: "match #{profile_name} #{dev_domain}.provenance.Spotlight",
       bundle_identifier: "#{dev_domain}.provenance.Spotlight",
       use_automatic_signing: automatic,
       team_id: team_id)
     disable_automatic_code_signing(path: "Provenance.xcodeproj",
       targets: ["ProvenanceTV"],
-      code_sign_identity: "iPhone Distribution",
-      profile_name: "match AdHoc #{dev_domain}.provenance.tvos",
+      code_sign_identity: "#{code_sign_identity}",
+      profile_name: "match #{profile_name} #{dev_domain}.provenance.tvos",
       bundle_identifier: "#{dev_domain}.provenance.tvos",
       use_automatic_signing: automatic,
       team_id: team_id)
     disable_automatic_code_signing(path: "Provenance.xcodeproj",
       targets: ["Topshelf"],
-      code_sign_identity: "iPhone Distribution",
-      profile_name: "match AdHoc #{dev_domain}.provenance.tvos.Topshelf",
+      code_sign_identity: "#{code_sign_identity}",
+      profile_name: "match #{profile_name} #{dev_domain}.provenance.tvos.Topshelf",
       bundle_identifier: "#{dev_domain}.provenance.tvos.Topshelf",
       use_automatic_signing: automatic,
       team_id: team_id)
@@ -526,11 +538,18 @@ end
     # Method used to export the archive.
     # Valid values are: app-store, ad-hoc, package, enterprise, development, developer-id
     export_method = options.fetch(:export_method, 'ad-hoc')
-    build_configuration = options.fetch(:build_configuration, 'Debug')
+    profile_name = "AdHoc"
+    if export_method == "app-store"
+      profile_name = "AppStore"
+    end
+    if export_method == "development"
+      profile_name = "Development"
+    end
+    build_configuration = options.fetch(:build_configuration, 'Release')
     platform = options.fetch(:platform, 'ios,tvos')
     if platform == "ios" || platform == 'ios,tvos'
       ipa_name = options.fetch(:ipa_name, 'Provenance.ipa')
-      scheme = options.fetch(:scheme, 'Provenance')
+      scheme = options.fetch(:scheme, 'Provenance-Release')
       UI.message "Building #{scheme} as #{export_method} app #{ipa_name} to #{output_directory}.\nConfig: #{build_configuration}"
       build_app(
         workspace: "Provenance.xcworkspace",
@@ -555,8 +574,8 @@ end
             fullSizeImageURL: "https://provenance-emu.com/github-files/ipa-assets/Icon512x512.png" # 512x512
           },
           provisioningProfiles: {
-            "#{dev_domain}.provenance" => "match AdHoc #{dev_domain}.provenance", # match AdHoc match AppStore match Development
-            "#{dev_domain}.provenance.Spotlight" => "match AdHoc #{dev_domain}.provenance.Spotlight"
+            "#{dev_domain}.provenance" => "match #{profile_name} #{dev_domain}.provenance", # match AdHoc match AppStore match Development
+            "#{dev_domain}.provenance.Spotlight" => "match #{profile_name} #{dev_domain}.provenance.Spotlight"
           },
           compileBitcode: false,
           uploadBitcode: false,
@@ -566,7 +585,7 @@ end
     end
     if platform == "tvos" || platform == 'ios,tvos'
       ipa_name = options.fetch(:ipa_name, 'ProvenanceTV.ipa')
-      scheme = options.fetch(:scheme, 'ProvenanceTV')
+      scheme = options.fetch(:scheme, 'ProvenanceTV-Release')
       UI.message "Building #{scheme} as #{export_method} app #{ipa_name} to #{output_directory}.\nConfig: #{build_configuration}"
       build_app(
         workspace: "Provenance.xcworkspace",
@@ -591,8 +610,8 @@ end
             fullSizeImageURL: "https://provenance-emu.com/github-files/ipa-assets/Icon512x512.png" # 512x512
           },
           provisioningProfiles: {
-            "#{dev_domain}.provenance.tvos" => "match AdHoc #{dev_domain}.provenance.tvos", # match AdHoc match AppStore match Development
-            "#{dev_domain}.provenance.tvos.Topshelf" => "match AdHoc #{dev_domain}.provenance.tvos.Topshelf"
+            "#{dev_domain}.provenance.tvos" => "match #{profile_name} #{dev_domain}.provenance.tvos", # match AdHoc match AppStore match Development
+            "#{dev_domain}.provenance.tvos.Topshelf" => "match #{profile_name} #{dev_domain}.provenance.tvos.Topshelf"
           },
           compileBitcode: false,
           uploadBitcode: false,
@@ -620,7 +639,7 @@ end
       ipa_name = options.fetch(:ipa_name, 'Provenance.ipa')
       build_app(
         workspace: "Provenance.xcworkspace",
-        scheme: "Provenance",
+        scheme: "Provenance-Release",
         export_method: "app-store", # Method used to export the archive. Valid values are: app-store, ad-hoc, package, enterprise, development, developer-id
         configuration: "Release",
         # codesigning_identity: "iPhone Developer",#{}"Joe Mattiello", "iPhone Distribution"
@@ -649,7 +668,7 @@ end
       ipa_name = options.fetch(:ipa_name, 'ProvenanceTV.ipa')
       build_app(
         workspace: "Provenance.xcworkspace",
-        scheme: "ProvenanceTV",
+        scheme: "ProvenanceTV-Release",
         export_method: "app-store", # Method used to export the archive. Valid values are: app-store, ad-hoc, package, enterprise, development, developer-id
         configuration: "Release",
         # codesigning_identity: "iPhone Developer",#{}"Joe Mattiello", "iPhone Distribution"

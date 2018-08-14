@@ -1801,6 +1801,7 @@
 					1AD481B31BA350A400FDA50A = {
 						CreatedOnToolsVersion = 7.1;
 						LastSwiftMigration = 0920;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -2527,7 +2528,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = ProvenanceTV/Provenance.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 9SC9QXFQBZ;
@@ -2554,7 +2555,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = info.b23prodtm.provenance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "916c7823-a10d-4ca4-81f4-777d0a822df3";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development info.b23prodtm.provenance";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore info.b23prodtm.provenance";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OBJC_BRIDGING_HEADER = "Provenance-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2598,7 +2599,10 @@
 				INFOPLIST_FILE = Provenance/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1  ";
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					" ",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = info.b23prodtm.provenance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2628,7 +2632,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = ProvenanceTV/Provenance.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 9SC9QXFQBZ;
@@ -2663,7 +2667,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = info.b23prodtm.provenance.tvos;
 				PRODUCT_NAME = Provenance;
 				PROVISIONING_PROFILE = "0b5eeae9-2ff5-4c34-b658-e3ed8e97e90a";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development info.b23prodtm.provenance.tvos";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore info.b23prodtm.provenance.tvos";
 				SDKROOT = appletvos;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OBJC_BRIDGING_HEADER = "ProvenanceTV-Bridging-Header.h";
@@ -2725,7 +2729,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = info.b23prodtm.provenance.tvos;
 				PRODUCT_NAME = Provenance;
 				PROVISIONING_PROFILE = "f3d53927-99d9-4b02-a8c5-393581a2d9cb";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore info.b23prodtm.provenance.tvos tvos";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore info.b23prodtm.provenance.tvos";
 				SDKROOT = appletvos;
 				SWIFT_OBJC_BRIDGING_HEADER = "ProvenanceTV-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -2785,7 +2789,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = info.b23prodtm.provenance.tvos;
 				PRODUCT_NAME = Provenance;
 				PROVISIONING_PROFILE = "c9bd575e-9005-45b0-ae62-85a22408d437";
-				PROVISIONING_PROFILE_SPECIFIER = "match Adhoc info.b23prodtm.provenance.tvos tvos";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore info.b23prodtm.provenance.tvos";
 				SDKROOT = appletvos;
 				SWIFT_OBJC_BRIDGING_HEADER = "ProvenanceTV-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -3059,7 +3063,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = info.b23prodtm.provenance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc info.b23prodtm.provenance";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore info.b23prodtm.provenance";
 				SWIFT_OBJC_BRIDGING_HEADER = "Provenance-Bridging-Header.h";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 4.0;
@@ -3107,7 +3111,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = Spotlight/Spotlight.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 9SC9QXFQBZ;
@@ -3134,7 +3138,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = info.b23prodtm.provenance.Spotlight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "23c38898-5bc8-4571-9816-c51cb5c8775e";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development info.b23prodtm.provenance.Spotlight";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore info.b23prodtm.provenance.Spotlight";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG EXTENSION";
 				SWIFT_COMPILATION_MODE = singlefile;
@@ -3237,7 +3241,7 @@
 				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-function-bodies=200 -Xfrontend -warn-long-expression-type-checking=200";
 				PRODUCT_BUNDLE_IDENTIFIER = info.b23prodtm.provenance.Spotlight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc info.b23prodtm.provenance.Spotlight";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore info.b23prodtm.provenance.Spotlight";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = EXTENSION;
 				SWIFT_OBJC_BRIDGING_HEADER = "Spotlight-Bridging-Header.h";
