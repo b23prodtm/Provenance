@@ -385,14 +385,14 @@ end
     disable_automatic_code_signing(path: "Provenance.xcodeproj",
       targets: ["ProvenanceTV"],
       code_sign_identity: "#{code_sign_identity}",
-      profile_name: "match #{profile_name} #{dev_domain}.provenance.tvos",
+      profile_name: "match #{profile_name} #{dev_domain}.provenance.tvos tvos",
       bundle_identifier: "#{dev_domain}.provenance.tvos",
       use_automatic_signing: automatic,
       team_id: team_id)
     disable_automatic_code_signing(path: "Provenance.xcodeproj",
       targets: ["Topshelf"],
       code_sign_identity: "#{code_sign_identity}",
-      profile_name: "match #{profile_name} #{dev_domain}.provenance.tvos.Topshelf",
+      profile_name: "match #{profile_name} #{dev_domain}.provenance.tvos.Topshelf tvos",
       bundle_identifier: "#{dev_domain}.provenance.tvos.Topshelf",
       use_automatic_signing: automatic,
       team_id: team_id)
@@ -610,8 +610,8 @@ end
             fullSizeImageURL: "https://provenance-emu.com/github-files/ipa-assets/Icon512x512.png" # 512x512
           },
           provisioningProfiles: {
-            "#{dev_domain}.provenance.tvos" => "match #{profile_name} #{dev_domain}.provenance.tvos", # match AdHoc match AppStore match Development
-            "#{dev_domain}.provenance.tvos.Topshelf" => "match #{profile_name} #{dev_domain}.provenance.tvos.Topshelf"
+            "#{dev_domain}.provenance.tvos" => "match #{profile_name} #{dev_domain}.provenance.tvos tvos", # match AdHoc match AppStore match Development
+            "#{dev_domain}.provenance.tvos.Topshelf" => "match #{profile_name} #{dev_domain}.provenance.tvos.Topshelf tvos"
           },
           compileBitcode: false,
           uploadBitcode: false,
@@ -685,8 +685,8 @@ end
             appURL: "https://www.provenance-emu.com/builds/#{ipa_name}",
           },
           provisioningProfiles: {
-            "#{dev_domain}.provenance.tvos" => "match AppStore #{dev_domain}.provenance.tvos", # match AdHoc match AppStore match Development
-            "#{dev_domain}.provenance.tvos.Topshelf" => "match AppStore #{dev_domain}.provenance.tvos.Topshelf"
+            "#{dev_domain}.provenance.tvos" => "match AppStore #{dev_domain}.provenance.tvos tvos", # match AdHoc match AppStore match Development
+            "#{dev_domain}.provenance.tvos.Topshelf" => "match AppStore #{dev_domain}.provenance.tvos.Topshelf tvos"
           }
         }
       )
