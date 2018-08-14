@@ -33,6 +33,17 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>800</string>
+	<key>GCSupportedGameControllers</key>
+	<array>
+		<dict>
+			<key>ProfileName</key>
+			<string>ExtendedGamepad</string>
+		</dict>
+		<dict>
+			<key>ProfileName</key>
+			<string>MicroGamepad</string>
+		</dict>
+	</array>
 	<key>GCSupportsControllerUserInteraction</key>
 	<true/>
 	<key>GitBranch</key>
@@ -60,6 +71,7 @@
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>arm64</string>
+		<string>gamekit</string>
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Automatic</string>
