@@ -10,6 +10,7 @@ PVLibrary/Carthage/Build/
 xcuserdata
 report.xml
 /Carthage/Build
+/Carthage/Checkouts
 /build
 /fastlane/keys
 /Provenance/Version.h
