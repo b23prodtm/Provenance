@@ -125,6 +125,8 @@
 		1F8D52481D91993000C29F90 /* licenses.html in Resources */ = {isa = PBXBuildFile; fileRef = 1F8D52471D91993000C29F90 /* licenses.html */; };
 		1FB125961D93E57F00D045D0 /* PVAppearanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB125951D93E57F00D045D0 /* PVAppearanceViewController.swift */; };
 		1FE10F291D94ECC600A20D1A /* PVAppearanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB125951D93E57F00D045D0 /* PVAppearanceViewController.swift */; };
+		33809D0E2124973D00EF16EC /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33809D0D2124973D00EF16EC /* GameController.framework */; };
+		33809D102124974900EF16EC /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33809D0F2124974900EF16EC /* GameKit.framework */; };
 		378F4A001B63D7CD0065FA39 /* GCDWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 378F49DF1B63D7CD0065FA39 /* GCDWebServer.m */; };
 		378F4A011B63D7CD0065FA39 /* GCDWebServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 378F49E11B63D7CD0065FA39 /* GCDWebServerConnection.m */; };
 		378F4A021B63D7CD0065FA39 /* GCDWebServerFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 378F49E31B63D7CD0065FA39 /* GCDWebServerFunctions.m */; };
@@ -560,6 +562,12 @@
 		1FB125951D93E57F00D045D0 /* PVAppearanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVAppearanceViewController.swift; sourceTree = "<group>"; };
 		25A64E151CB1C41100EDD19D /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
 		25A64E161CB1C41100EDD19D /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
+		3321F661211B948600138C8E /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = PVLibrary/Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		3321F663211B948A00138C8E /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = PVLibrary/Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		3321F665211B94AB00138C8E /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = PVSupport/Carthage/Build/iOS/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
+		33809D0D2124973D00EF16EC /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS11.4.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
+		33809D0F2124974900EF16EC /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS11.4.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
+		33CF87812123324300B4481E /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		378F49DE1B63D7CD0065FA39 /* GCDWebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServer.h; sourceTree = "<group>"; };
 		378F49DF1B63D7CD0065FA39 /* GCDWebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServer.m; sourceTree = "<group>"; };
 		378F49E01B63D7CD0065FA39 /* GCDWebServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerConnection.h; sourceTree = "<group>"; };
@@ -822,6 +830,7 @@
 				1AD4822D1BA359D300FDA50A /* libz.tbd in Frameworks */,
 				1AD4BC6D1BFD3896007D6C7C /* AVFoundation.framework in Frameworks */,
 				B3C9D5601DEA85D10068D057 /* PVSNES.framework in Frameworks */,
+				33809D102124974900EF16EC /* GameKit.framework in Frameworks */,
 				B3B3B9791DED14A100602746 /* PVMupen64PlusVideoRice.framework in Frameworks */,
 				B3AD689B1D6EA6180021B949 /* PicoDrive.framework in Frameworks */,
 				B38526AA2108267800434945 /* PVAtari800.framework in Frameworks */,
@@ -843,6 +852,7 @@
 				1AD482231BA3598100FDA50A /* SystemConfiguration.framework in Frameworks */,
 				1AD482211BA3597500FDA50A /* Security.framework in Frameworks */,
 				1AD4821F1BA3596D00FDA50A /* MobileCoreServices.framework in Frameworks */,
+				33809D0E2124973D00EF16EC /* GameController.framework in Frameworks */,
 				1AD4821D1BA3596200FDA50A /* CFNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -954,6 +964,12 @@
 		1A3D409617B2DCE4004DFFFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				33809D0F2124974900EF16EC /* GameKit.framework */,
+				33809D0D2124973D00EF16EC /* GameController.framework */,
+				33CF87812123324300B4481E /* ExternalAccessory.framework */,
+				3321F665211B94AB00138C8E /* CocoaLumberjackSwift.framework */,
+				3321F663211B948A00138C8E /* Realm.framework */,
+				3321F661211B948600138C8E /* RealmSwift.framework */,
 				B32155432107D1D40085B18E /* PVLibrary.framework */,
 				B32155412107D0CE0085B18E /* PVLibrary.framework */,
 				B321553F2107CEE00085B18E /* PVLibrary.framework */,
@@ -1726,13 +1742,32 @@
 				TargetAttributes = {
 					1A3D409317B2DCE4004DFFFC = {
 						LastSwiftMigration = 1000;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.WAC = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					1AD481B31BA350A400FDA50A = {
 						CreatedOnToolsVersion = 7.1;
 						LastSwiftMigration = 0920;
-						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+							com.apple.iCloud = {
 								enabled = 0;
 							};
 						};
@@ -1748,7 +1783,6 @@
 					B3E21D6A203211BE009939D3 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1000;
-						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -2438,10 +2472,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = Provenance/Provenance.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvsimulator*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 9DSA2J9CHZ;
@@ -2489,12 +2521,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = Provenance/Provenance.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvsimulator*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9DSA2J9CHZ;
+				DEVELOPMENT_TEAM = 9SC9QXFQBZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2543,10 +2573,9 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvsimulator*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = ProvenanceTV/Provenance.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 63497P68S6;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2579,6 +2608,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.provenance-emu.provenance";
 				PRODUCT_NAME = Provenance;
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OBJC_BRIDGING_HEADER = "ProvenanceTV-Bridging-Header.h";
@@ -2602,9 +2632,9 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = ProvenanceTV/Provenance.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 63497P68S6;
@@ -2639,6 +2669,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.provenance-emu.provenance";
 				PRODUCT_NAME = Provenance;
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SWIFT_OBJC_BRIDGING_HEADER = "ProvenanceTV-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -2660,9 +2691,9 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_ENTITLEMENTS = ProvenanceTV/Provenance.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 63497P68S6;
@@ -2697,6 +2728,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.provenance-emu.provenance";
 				PRODUCT_NAME = Provenance;
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SWIFT_OBJC_BRIDGING_HEADER = "ProvenanceTV-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -2933,9 +2965,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = Provenance/Provenance.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9DSA2J9CHZ;
@@ -3010,9 +3041,9 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
+				CODE_SIGN_ENTITLEMENTS = Spotlight/Spotlight.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 9DSA2J9CHZ;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3035,6 +3066,8 @@
 				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-function-bodies=200 -Xfrontend -warn-long-expression-type-checking=200";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.provenance-emu.provenance.Spotlight";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG EXTENSION";
 				SWIFT_COMPILATION_MODE = singlefile;
@@ -3057,9 +3090,9 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
+				CODE_SIGN_ENTITLEMENTS = Spotlight/Spotlight.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9DSA2J9CHZ;
@@ -3084,6 +3117,8 @@
 				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-function-bodies=200 -Xfrontend -warn-long-expression-type-checking=200";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.provenance-emu.provenance.Spotlight";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = EXTENSION;
 				SWIFT_OBJC_BRIDGING_HEADER = "Spotlight-Bridging-Header.h";
@@ -3104,9 +3139,9 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
+				CODE_SIGN_ENTITLEMENTS = Spotlight/Spotlight.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9DSA2J9CHZ;
@@ -3131,6 +3166,7 @@
 				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-function-bodies=200 -Xfrontend -warn-long-expression-type-checking=200";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.provenance-emu.provenance.Spotlight";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = EXTENSION;
 				SWIFT_OBJC_BRIDGING_HEADER = "Spotlight-Bridging-Header.h";
@@ -3148,9 +3184,9 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = TopShelf/TopShelf.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 63497P68S6;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -3177,6 +3213,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.provenance-emu.provenance.topshelf";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "TopShelf-Bridging-Header.h";
@@ -3194,9 +3231,9 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = TopShelf/TopShelf.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 63497P68S6;
@@ -3225,6 +3262,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.provenance-emu.provenance.topshelf";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "TopShelf-Bridging-Header.h";
@@ -3242,9 +3280,9 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_ENTITLEMENTS = TopShelf/TopShelf.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 63497P68S6;
@@ -3273,6 +3311,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.provenance-emu.provenance.topshelf";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "TopShelf-Bridging-Header.h";
