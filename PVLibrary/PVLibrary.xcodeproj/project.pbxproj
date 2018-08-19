@@ -11,6 +11,7 @@
 		3321F65E211B922100138C8E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C04B8B2107972200E7AF79 /* Realm.framework */; };
 		3321F65F211B922E00138C8E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C04B8B2107972200E7AF79 /* Realm.framework */; };
 		3321F660211B923100138C8E /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C04B892107972200E7AF79 /* RealmSwift.framework */; };
+		33ADC3B12128A47700ED31F4 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B3AF45E521071894002211EE /* libc++.tbd */; };
 		B3067F4B2106B5A30091437F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3067F4A2106B5A20091437F /* Foundation.framework */; };
 		B3067F4D2106B5A80091437F /* PVSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3067F4C2106B5A80091437F /* PVSupport.framework */; };
 		B3067F5D2106B8590091437F /* OESQLiteDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = B3579D1E2106B4D600DDEBD6 /* OESQLiteDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -820,6 +821,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33ADC3B12128A47700ED31F4 /* libc++.tbd in Frameworks */,
 				B3067F4D2106B5A80091437F /* PVSupport.framework in Frameworks */,
 				3321F65E211B922100138C8E /* Realm.framework in Frameworks */,
 				3321F65D211B920700138C8E /* RealmSwift.framework in Frameworks */,
@@ -1669,15 +1671,16 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Cartfile.resolved",
+				"",
 			);
 			name = Carthage;
 			outputPaths = (
 				"$(SRCROOT)/Carthage/.Cartfile.iOS.resolved",
+				"$(SRCROOT)/Cartfile.resolved",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "cd ..\nsource ~/.bash_profile 2> /dev/null\nsh Scripts/carthage.sh iOS\n";
+			shellScript = "cd ..\nsource ~/.bash_profile 2> /dev/null\nsh Scripts/carthage.sh iOS";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2051,7 +2054,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
@@ -2115,7 +2118,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = "";

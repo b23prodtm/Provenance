@@ -9,8 +9,8 @@ PVLibrary/Carthage/Build/
 /Provenance.xcodeproj/project.xcworkspace/xcuserdata
 xcuserdata
 report.xml
-/Carthage/Build
-/Carthage/Checkouts
+**/Carthage/Build
+**/Carthage/Checkouts
 /build
 /fastlane/keys
 /Provenance/Version.h
@@ -22,3 +22,4 @@ report.xml
 /.version
 .DS_Store
 /DerivedData/
+/archive

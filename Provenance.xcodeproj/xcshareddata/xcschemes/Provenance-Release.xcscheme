@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B3579D0E2106B11D00DDEBD6"
-               BuildableName = "PVLibrary.framework"
-               BlueprintName = "PVLibrary"
-               ReferencedContainer = "container:PVLibrary/PVLibrary.xcodeproj">
+               BlueprintIdentifier = "B3C96EBE1D62C5E7003F1E93"
+               BuildableName = "PVSupport.framework"
+               BlueprintName = "PVSupport"
+               ReferencedContainer = "container:PVSupport/PVSupport.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B3C96EBE1D62C5E7003F1E93"
-               BuildableName = "PVSupport.framework"
-               BlueprintName = "PVSupport"
-               ReferencedContainer = "container:PVSupport/PVSupport.xcodeproj">
+               BlueprintIdentifier = "B3579D0E2106B11D00DDEBD6"
+               BuildableName = "PVLibrary.framework"
+               BlueprintName = "PVLibrary"
+               ReferencedContainer = "container:PVLibrary/PVLibrary.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry

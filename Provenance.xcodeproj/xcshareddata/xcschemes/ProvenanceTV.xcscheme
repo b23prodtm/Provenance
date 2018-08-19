@@ -28,6 +28,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B3C04A8B21077B3100E7AF79"
+               BuildableName = "PVLibrary.framework"
+               BlueprintName = "PVLibrary tvOS"
+               ReferencedContainer = "container:PVLibrary/PVLibrary.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "B3C9D4C51DEA77E90068D057"
                BuildableName = "PVGBA.framework"
                BlueprintName = "PVGBA tvOS"
