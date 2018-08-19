@@ -1897,7 +1897,6 @@
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-fPIC",
-					"-ffunction-sections",
 					"-falign-functions=2",
 					"-DNDEBUG",
 					"-DEMU_F68K",
@@ -1960,7 +1959,6 @@
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-fPIC",
-					"-ffunction-sections",
 					"-falign-functions=2",
 					"-DNDEBUG",
 					"-DEMU_F68K",
@@ -2032,7 +2030,6 @@
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-fPIC",
-					"-ffunction-sections",
 					"-falign-functions=2",
 					"-DNDEBUG",
 					"-DEMU_F68K",
@@ -2096,7 +2093,6 @@
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-fPIC",
-					"-ffunction-sections",
 					"-falign-functions=2",
 					"-DNDEBUG",
 					"-DEMU_F68K",
