@@ -1004,7 +1004,6 @@
 		335BC59920D2EB780095F719 /* m68kc68k.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = m68kc68k.h; sourceTree = "<group>"; };
 		335BC59E20D2EB9F0095F719 /* m68kc68k.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = m68kc68k.c; sourceTree = "<group>"; };
 		335BC61B20D2EC890095F719 /* libYabauseC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libYabauseC.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3361329D20AA116500785BA8 /* GLEW.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLEW.framework; path = ../Frameworks/GLEW.framework; sourceTree = "<group>"; };
 		3361329E20AA116600785BA8 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../Frameworks/SDL2.framework; sourceTree = "<group>"; };
 		337A05B220D409C3003B89CA /* scu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = scu.h; sourceTree = "<group>"; };
 		337DD41020A49BC00014EDF7 /* PVYabause.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PVYabause.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2577,7 +2576,6 @@
 				335BC58620D2D7240095F719 /* GameController.framework */,
 				335BC54F20D2D4450095F719 /* GLKit.framework */,
 				335BC54D20D2D3F80095F719 /* OpenGLES.framework */,
-				3361329D20AA116500785BA8 /* GLEW.framework */,
 				3361329E20AA116600785BA8 /* SDL2.framework */,
 				B327756B1E9C8F0A000FEC38 /* PVSupport.framework */,
 				B32775641E9C8546000FEC38 /* PVSupport.framework */,
@@ -2680,6 +2678,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 337DD40D20A49BC00014EDF7 /* Build configuration list for PBXNativeTarget "PVYabause tvOS" */;
 			buildPhases = (
+				3362193C212C0220000CD0E6 /* Carthage */,
 				337DD3D620A49BC00014EDF7 /* Sources */,
 				337DD40320A49BC00014EDF7 /* Frameworks */,
 				337DD40920A49BC00014EDF7 /* Headers */,
@@ -2699,6 +2698,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B327752A1E9C8444000FEC38 /* Build configuration list for PBXNativeTarget "PVYabause" */;
 			buildPhases = (
+				33621937212C0206000CD0E6 /* Carthage */,
 				B327751E1E9C8444000FEC38 /* Sources */,
 				B327751F1E9C8444000FEC38 /* Frameworks */,
 				B32775201E9C8444000FEC38 /* Headers */,
@@ -2818,6 +2818,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33621937212C0206000CD0E6 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Cartfile.resolved",
+				"$(SRCROOT)/Cartfile",
+			);
+			name = Carthage;
+			outputPaths = (
+				"$(SRCROOT)/Carthage/.Cartfile.iOS.resolved",
+				"$(SRCROOT)/Carthage/.Cartfile.resolved",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd ..\nsource ~/.bash_profile 2> /dev/null\nsh Scripts/carthage.sh iOS";
+		};
+		3362193C212C0220000CD0E6 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Cartfile",
+				"$(SRCROOT)/Cartfile.resolved",
+			);
+			name = Carthage;
+			outputPaths = (
+				"$(SRCROOT)/Carthage/.Cartfile.tvOS.resolved",
+				"$(SRCROOT)/Carthage/.Cartfile.resolved",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd ..\nsource ~/.bash_profile 2> /dev/null\nsh Scripts/carthage.sh tvOS";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		335BC5D620D2EC890095F719 /* Sources */ = {

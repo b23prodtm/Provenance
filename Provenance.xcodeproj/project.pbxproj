@@ -1991,6 +1991,8 @@
 				"$(SRCROOT)/Carthage/Build/tvOS/HockeySDK.framework",
 				"$(SRCROOT)/PVSupport/Carthage/Build/tvOS/SwiftyUserDefaults.framework",
 				"$(SRCROOT)/PVLibrary/Carthage/Build/tvOS/ZipArchive.framework",
+				"$(SRCROOT)/PVYabause/Carthage/Build/tvOS/SDL2.framework",
+				"$(SRCROOT)/PVYabause/Carthage/Build/tvOS/GLEW.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
@@ -2019,7 +2021,9 @@
 				"$(SRCROOT)/PVLibrary/Carthage/Build/iOS/ZIPFoundation.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/HockeySDK.framework",
 				"$(SRCROOT)/PVSupport/Carthage/Build/iOS/SwiftyUserDefaults.framework",
-				"$(SRCROOT)/PVLibrary/Carthage/Build/tvOS/ZipArchive.framework",
+				"$(SRCROOT)/PVLibrary/Carthage/Build/iOS/ZipArchive.framework",
+				"$(SRCROOT)/PVYabause/Carthage/Build/iOS/SDL2.framework",
+				"$(SRCROOT)/PVYabause/Carthage/Build/iOS/GLEW.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
@@ -2048,12 +2052,13 @@
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Cartfile",
 				"$(SRCROOT)/Cartfile.resolved",
-				"$(SRCROOT)/Carthage/.Cartfile.iOS.resolved",
 			);
 			name = Carthage;
 			outputPaths = (
-				"",
+				"$(SRCROOT)/Carthage/.Cartfile.iOS.resolved",
+				"$(SRCROOT)/Carthage/.Cartfile.resolved",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
@@ -2066,6 +2071,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Cartfile.resolved",
+				"$(SRCROOT)/Cartfile",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -2082,6 +2088,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Cartfile.resolved",
+				"$(SRCROOT)/Cartfile",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -2098,11 +2105,13 @@
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Cartfile",
 				"$(SRCROOT)/Cartfile.resolved",
 			);
 			name = Carthage;
 			outputPaths = (
 				"$(SRCROOT)/Carthage/.Cartfile.tvOS.resolved",
+				"$(SRCROOT)/Carthage/.Cartfile.resolved",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;

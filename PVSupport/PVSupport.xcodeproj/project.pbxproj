@@ -393,7 +393,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3C96EA61D62C3A3003F1E93 /* Build configuration list for PBXNativeTarget "PVSupport tvOS" */;
 			buildPhases = (
-				B3E708A920B7E918005BAA5A /* Carthage Build */,
+				B3E708A920B7E918005BAA5A /* Carthage */,
 				B3C96E9B1D62C3A3003F1E93 /* Headers */,
 				B3C96E991D62C3A3003F1E93 /* Sources */,
 				B3C96E9A1D62C3A3003F1E93 /* Frameworks */,
@@ -412,7 +412,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3C96ED41D62C5E7003F1E93 /* Build configuration list for PBXNativeTarget "PVSupport" */;
 			buildPhases = (
-				B3E708A820B7E8F9005BAA5A /* Carthage build */,
+				B3E708A820B7E8F9005BAA5A /* Carthage */,
 				B3C96EC81D62C5E7003F1E93 /* Headers */,
 				B3C96EBF1D62C5E7003F1E93 /* Sources */,
 				B3C96EC71D62C5E7003F1E93 /* Frameworks */,
@@ -484,33 +484,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B3E708A820B7E8F9005BAA5A /* Carthage build */ = {
+		B3E708A820B7E8F9005BAA5A /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"$(SRCROOT)/Cartfile.resolved",
+				"$(SRCROOT)/Cartfile",
 			);
-			name = "Carthage build";
+			name = Carthage;
 			outputPaths = (
 				"$(SRCROOT)/Carthage/.Cartfile.iOS.resolved",
+				"$(SRCROOT)/Carthage/.Cartfile.resolved",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
 			shellScript = "cd ..\nsource ~/.bash_profile 2> /dev/null\nsh Scripts/carthage.sh iOS\n";
 		};
-		B3E708A920B7E918005BAA5A /* Carthage Build */ = {
+		B3E708A920B7E918005BAA5A /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Cartfile",
 				"$(SRCROOT)/Cartfile.resolved",
 			);
-			name = "Carthage Build";
+			name = Carthage;
 			outputPaths = (
 				"$(SRCROOT)/Carthage/.Cartfile.tvOS.resolved",
+				"$(SRCROOT)/Carthage/.Cartfile.resolved",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;

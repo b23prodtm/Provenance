@@ -1655,10 +1655,12 @@
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Cartfile",
+				"$(SRCROOT)/Cartfile.resolved",
 			);
 			name = Carthage;
 			outputPaths = (
-				"$(SRCROOT)/Cartfile.resolved",
+				"$(SRCROOT)/Carthage/.Cartfile.resolved",
 				"$(SRCROOT)/Carthage/.Cartfile.tvOS.resolved",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1671,12 +1673,13 @@
 			files = (
 			);
 			inputPaths = (
-				"",
+				"$(SRCROOT)/Cartfile",
+				"$(SRCROOT)/Cartfile.resolved",
 			);
 			name = Carthage;
 			outputPaths = (
 				"$(SRCROOT)/Carthage/.Cartfile.iOS.resolved",
-				"$(SRCROOT)/Cartfile.resolved",
+				"$(SRCROOT)/Carthage/.Cartfile.resolved",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
