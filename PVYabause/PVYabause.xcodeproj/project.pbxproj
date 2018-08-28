@@ -2661,6 +2661,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 335BC61820D2EC890095F719 /* Build configuration list for PBXNativeTarget "YabauseC" */;
 			buildPhases = (
+				334CA31F2135A96100C2C8EB /* Carthage */,
 				335BC5D620D2EC890095F719 /* Sources */,
 				335BC60D20D2EC890095F719 /* Frameworks */,
 				335BC61620D2EC890095F719 /* Copy Files */,
@@ -2820,6 +2821,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		334CA31F2135A96100C2C8EB /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Cartfile.resolved",
+				"$(SRCROOT)/Cartfile",
+			);
+			name = Carthage;
+			outputPaths = (
+				"$(SRCROOT)/Cartfile/.Cartfile.resolved",
+				"$(SRCROOT)/Cartfile/.Cartfile.iOS.resolved",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd ..\nsource ~/.bash_profile 2> /dev/null\nsh Scripts/carthage.sh iOS";
+		};
 		33621937212C0206000CD0E6 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3098,6 +3117,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.provenance.PVYabause;
 				PRODUCT_NAME = PVYabause;
 				SDKROOT = appletvos;
@@ -3140,6 +3163,10 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.provenance.PVYabause;
 				PRODUCT_NAME = PVYabause;
 				SDKROOT = appletvos;
@@ -3186,6 +3213,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.provenance.PVYabause;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -3228,6 +3259,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.provenance.PVYabause;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

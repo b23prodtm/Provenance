@@ -1,5 +1,4 @@
 github "b23prodtm/ZipArchive-iOS"
-github "b23prodtm/ZipArchive-tvos"
 github "realm/realm-cocoa"
 github "stephencelis/SQLite.swift"
 github "weichsel/ZIPFoundation"
