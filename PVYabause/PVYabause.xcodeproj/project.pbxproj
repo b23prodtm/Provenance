@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3359A7632108712F006957B2 /* sh2_jit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3359A68A210870A3006957B2 /* sh2_jit.cpp */; };
 		3359A767210874D5006957B2 /* yab_tsunami.c in Sources */ = {isa = PBXBuildFile; fileRef = 3359A4A12108709F006957B2 /* yab_tsunami.c */; };
 		3359A768210874D5006957B2 /* Tsunami.c in Sources */ = {isa = PBXBuildFile; fileRef = 3359A4A22108709F006957B2 /* Tsunami.c */; };
-		3359A76921087509006957B2 /* c68kexec.c in Sources */ = {isa = PBXBuildFile; fileRef = 3359A4E8210870A0006957B2 /* c68kexec.c */; settings = {COMPILER_FLAGS = "-O0"; }; };
+		3359A76921087509006957B2 /* c68kexec.c in Sources */ = {isa = PBXBuildFile; fileRef = 3359A4E8210870A0006957B2 /* c68kexec.c */; settings = {COMPILER_FLAGS = "-Ofast"; }; };
 		3359A76A21087509006957B2 /* c68k.c in Sources */ = {isa = PBXBuildFile; fileRef = 3359A4EE210870A0006957B2 /* c68k.c */; };
 		3359A76B21087515006957B2 /* titan.c in Sources */ = {isa = PBXBuildFile; fileRef = 3359A6CC210870A4006957B2 /* titan.c */; };
 		335BC5D720D2EC890095F719 /* m68kc68k.c in Sources */ = {isa = PBXBuildFile; fileRef = 335BC59E20D2EB9F0095F719 /* m68kc68k.c */; };
@@ -75,19 +74,25 @@
 		336F378220E0D8B100FA7301 /* YabauseGameCore.h in Headers */ = {isa = PBXBuildFile; fileRef = EB851D0B152396CC00715BD2 /* YabauseGameCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		337A05B620D40AE2003B89CA /* libYabauseC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 335BC61B20D2EC890095F719 /* libYabauseC.a */; };
 		337A05BB20D40B0C003B89CA /* libYabauseC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 335BC61B20D2EC890095F719 /* libYabauseC.a */; };
+		337B9153213D280D008B54B5 /* m68kopac.c in Sources */ = {isa = PBXBuildFile; fileRef = 337B914D213D280C008B54B5 /* m68kopac.c */; };
+		337B9154213D280D008B54B5 /* m68kops.c in Sources */ = {isa = PBXBuildFile; fileRef = 337B914E213D280C008B54B5 /* m68kops.c */; };
+		337B9155213D280D008B54B5 /* m68kopdm.c in Sources */ = {isa = PBXBuildFile; fileRef = 337B9150213D280C008B54B5 /* m68kopdm.c */; };
+		337B9156213D280D008B54B5 /* m68kopnz.c in Sources */ = {isa = PBXBuildFile; fileRef = 337B9151213D280C008B54B5 /* m68kopnz.c */; };
 		337DD40220A49BC00014EDF7 /* YabauseGameCore.m in Sources */ = {isa = PBXBuildFile; fileRef = EB851D0C152396CC00715BD2 /* YabauseGameCore.m */; };
 		337DD40420A49BC00014EDF7 /* PVSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32775641E9C8546000FEC38 /* PVSupport.framework */; };
 		337DD40720A49BC00014EDF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B327755C1E9C8520000FEC38 /* Foundation.framework */; };
 		337DD40820A49BC00014EDF7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B327755A1E9C851C000FEC38 /* OpenGLES.framework */; };
 		337DD40A20A49BC00014EDF7 /* PVYabause.h in Headers */ = {isa = PBXBuildFile; fileRef = B32775251E9C8444000FEC38 /* PVYabause.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		33AE6D4E2180970F00043BD6 /* libYabauseC.a in Resources */ = {isa = PBXBuildFile; fileRef = 335BC61B20D2EC890095F719 /* libYabauseC.a */; };
+		33AE6D532180972000043BD6 /* libYabauseC.a in Resources */ = {isa = PBXBuildFile; fileRef = 335BC61B20D2EC890095F719 /* libYabauseC.a */; };
 		33CA104C210CB80100AC0C7E /* Yabause.icns in Resources */ = {isa = PBXBuildFile; fileRef = EB78914E152A08600080990B /* Yabause.icns */; };
 		33CA104D210CB80100AC0C7E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3329DA7D20A5EAB600B89B1A /* InfoPlist.strings */; };
 		33CA104E210CB80100AC0C7E /* Core.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3329DA7F20A5EAB600B89B1A /* Core.plist */; };
-		33D07BA620D5570800EDDBE1 /* scsp.c in Sources */ = {isa = PBXBuildFile; fileRef = 33D07BA420D5570700EDDBE1 /* scsp.c */; };
 		33D07BA820D57D3700EDDBE1 /* thr-dummy.c in Sources */ = {isa = PBXBuildFile; fileRef = 33D07BA720D57D3700EDDBE1 /* thr-dummy.c */; };
 		33D4B89A20A62E9100E11F8D /* Yabause.icns in Resources */ = {isa = PBXBuildFile; fileRef = EB78914E152A08600080990B /* Yabause.icns */; };
 		33D4B89B20A62E9100E11F8D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3329DA7D20A5EAB600B89B1A /* InfoPlist.strings */; };
 		33D4B89C20A62E9100E11F8D /* Core.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3329DA7F20A5EAB600B89B1A /* Core.plist */; };
+		33FC0304213C24570078C165 /* sh2_dynarec.c in Sources */ = {isa = PBXBuildFile; fileRef = 3359A4C3210870A0006957B2 /* sh2_dynarec.c */; };
 		B32775271E9C8444000FEC38 /* PVYabause.h in Headers */ = {isa = PBXBuildFile; fileRef = B32775251E9C8444000FEC38 /* PVYabause.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B32775591E9C84DE000FEC38 /* YabauseGameCore.m in Sources */ = {isa = PBXBuildFile; fileRef = EB851D0C152396CC00715BD2 /* YabauseGameCore.m */; };
 		B327755B1E9C851C000FEC38 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B327755A1E9C851C000FEC38 /* OpenGLES.framework */; };
@@ -1004,9 +1009,14 @@
 		335BC59920D2EB780095F719 /* m68kc68k.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = m68kc68k.h; sourceTree = "<group>"; };
 		335BC59E20D2EB9F0095F719 /* m68kc68k.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = m68kc68k.c; sourceTree = "<group>"; };
 		335BC61B20D2EC890095F719 /* libYabauseC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libYabauseC.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3361329D20AA116500785BA8 /* GLEW.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLEW.framework; path = ../Frameworks/GLEW.framework; sourceTree = "<group>"; };
 		3361329E20AA116600785BA8 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../Frameworks/SDL2.framework; sourceTree = "<group>"; };
 		337A05B220D409C3003B89CA /* scu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = scu.h; sourceTree = "<group>"; };
+		337B9123213D25A4008B54B5 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		337B914D213D280C008B54B5 /* m68kopac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = m68kopac.c; sourceTree = "<group>"; };
+		337B914E213D280C008B54B5 /* m68kops.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = m68kops.c; sourceTree = "<group>"; };
+		337B9150213D280C008B54B5 /* m68kopdm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = m68kopdm.c; sourceTree = "<group>"; };
+		337B9151213D280C008B54B5 /* m68kopnz.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = m68kopnz.c; sourceTree = "<group>"; };
+		337B9152213D280C008B54B5 /* m68kops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = m68kops.h; sourceTree = "<group>"; };
 		337DD41020A49BC00014EDF7 /* PVYabause.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PVYabause.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D07BA420D5570700EDDBE1 /* scsp.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = scsp.c; sourceTree = "<group>"; };
 		33D07BA720D57D3700EDDBE1 /* thr-dummy.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "thr-dummy.c"; sourceTree = "<group>"; };
@@ -1232,6 +1242,8 @@
 		3359A4672108709F006957B2 /* yabause */ = {
 			isa = PBXGroup;
 			children = (
+				337B913A213D280C008B54B5 /* musashi */,
+				337B9123213D25A4008B54B5 /* config.h */,
 				3359A4682108709F006957B2 /* l10n */,
 				3359A47F2108709F006957B2 /* CMakeLists.txt */,
 				3359A4802108709F006957B2 /* ChangeLog */,
@@ -2535,6 +2547,18 @@
 			path = .circleci;
 			sourceTree = "<group>";
 		};
+		337B913A213D280C008B54B5 /* musashi */ = {
+			isa = PBXGroup;
+			children = (
+				337B914D213D280C008B54B5 /* m68kopac.c */,
+				337B914E213D280C008B54B5 /* m68kops.c */,
+				337B9150213D280C008B54B5 /* m68kopdm.c */,
+				337B9151213D280C008B54B5 /* m68kopnz.c */,
+				337B9152213D280C008B54B5 /* m68kops.h */,
+			);
+			path = musashi;
+			sourceTree = "<group>";
+		};
 		B32775241E9C8444000FEC38 /* PVYabause */ = {
 			isa = PBXGroup;
 			children = (
@@ -2577,7 +2601,6 @@
 				335BC58620D2D7240095F719 /* GameController.framework */,
 				335BC54F20D2D4450095F719 /* GLKit.framework */,
 				335BC54D20D2D3F80095F719 /* OpenGLES.framework */,
-				3361329D20AA116500785BA8 /* GLEW.framework */,
 				3361329E20AA116600785BA8 /* SDL2.framework */,
 				B327756B1E9C8F0A000FEC38 /* PVSupport.framework */,
 				B32775641E9C8546000FEC38 /* PVSupport.framework */,
@@ -2664,8 +2687,9 @@
 			buildConfigurationList = 335BC61820D2EC890095F719 /* Build configuration list for PBXNativeTarget "YabauseC" */;
 			buildPhases = (
 				335BC5D620D2EC890095F719 /* Sources */,
-				335BC60D20D2EC890095F719 /* Frameworks */,
+				33920992213E7A8F00B73B7B /* ASM linkage fix */,
 				335BC61620D2EC890095F719 /* Copy Files */,
+				335BC60D20D2EC890095F719 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2680,6 +2704,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 337DD40D20A49BC00014EDF7 /* Build configuration list for PBXNativeTarget "PVYabause tvOS" */;
 			buildPhases = (
+				3362193C212C0220000CD0E6 /* Carthage */,
 				337DD3D620A49BC00014EDF7 /* Sources */,
 				337DD40320A49BC00014EDF7 /* Frameworks */,
 				337DD40920A49BC00014EDF7 /* Headers */,
@@ -2699,6 +2724,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B327752A1E9C8444000FEC38 /* Build configuration list for PBXNativeTarget "PVYabause" */;
 			buildPhases = (
+				33621937212C0206000CD0E6 /* Carthage */,
 				B327751E1E9C8444000FEC38 /* Sources */,
 				B327751F1E9C8444000FEC38 /* Frameworks */,
 				B32775201E9C8444000FEC38 /* Headers */,
@@ -2720,15 +2746,14 @@
 		EB3297071522671200307B0C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1000;
 				TargetAttributes = {
 					335BC5A020D2EC890095F719 = {
 						DevelopmentTeam = 9SC9QXFQBZ;
 						ProvisioningStyle = Automatic;
 					};
 					337DD3D320A49BC00014EDF7 = {
-						DevelopmentTeam = 9SC9QXFQBZ;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					B32775221E9C8444000FEC38 = {
 						CreatedOnToolsVersion = 8.3;
@@ -2801,6 +2826,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33AE6D532180972000043BD6 /* libYabauseC.a in Resources */,
 				33CA104C210CB80100AC0C7E /* Yabause.icns in Resources */,
 				33CA104D210CB80100AC0C7E /* InfoPlist.strings in Resources */,
 				33CA104E210CB80100AC0C7E /* Core.plist in Resources */,
@@ -2811,6 +2837,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33AE6D4E2180970F00043BD6 /* libYabauseC.a in Resources */,
 				33D4B89A20A62E9100E11F8D /* Yabause.icns in Resources */,
 				33D4B89B20A62E9100E11F8D /* InfoPlist.strings in Resources */,
 				33D4B89C20A62E9100E11F8D /* Core.plist in Resources */,
@@ -2819,14 +2846,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		33621937212C0206000CD0E6 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Cartfile.resolved",
+				"$(SRCROOT)/Cartfile",
+			);
+			name = Carthage;
+			outputPaths = (
+				"$(SRCROOT)/Carthage/.Cartfile.iOS.resolved",
+				"$(SRCROOT)/Carthage/.Cartfile.resolved",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd ..\nsource ~/.bash_profile 2> /dev/null\nsh Scripts/carthage.sh iOS\n";
+		};
+		3362193C212C0220000CD0E6 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Cartfile",
+				"$(SRCROOT)/Cartfile.resolved",
+			);
+			name = Carthage;
+			outputPaths = (
+				"$(SRCROOT)/Carthage/.Cartfile.tvOS.resolved",
+				"$(SRCROOT)/Carthage/.Cartfile.resolved",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd ..\nsource ~/.bash_profile 2> /dev/null\nsh Scripts/carthage.sh tvOS\n";
+		};
+		33920992213E7A8F00B73B7B /* ASM linkage fix */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "ASM linkage fix";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# prevent illegal linking object\nrm -f $(DERIVED_FILE_DIR)/../Objects-normal/armv7/linkage_arm.o\nrm -f $(DERIVED_FILE_DIR)/../Objects-normal/armv7s/linkage_arm.o\nrm -f $(DERIVED_FILE_DIR)/../Objects-normal/arm64/linkage_arm.o\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		335BC5D620D2EC890095F719 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				337B9153213D280D008B54B5 /* m68kopac.c in Sources */,
+				337B9154213D280D008B54B5 /* m68kops.c in Sources */,
+				337B9155213D280D008B54B5 /* m68kopdm.c in Sources */,
+				337B9156213D280D008B54B5 /* m68kopnz.c in Sources */,
 				3359A76B21087515006957B2 /* titan.c in Sources */,
 				33D07BA820D57D3700EDDBE1 /* thr-dummy.c in Sources */,
-				33D07BA620D5570800EDDBE1 /* scsp.c in Sources */,
 				3359A76921087509006957B2 /* c68kexec.c in Sources */,
 				3359A76A21087509006957B2 /* c68k.c in Sources */,
 				335BC5D720D2EC890095F719 /* m68kc68k.c in Sources */,
@@ -2837,7 +2920,6 @@
 				3359A768210874D5006957B2 /* Tsunami.c in Sources */,
 				335BC5DD20D2EC890095F719 /* profile.c in Sources */,
 				335BC5DE20D2EC890095F719 /* cdbase.c in Sources */,
-				3359A7632108712F006957B2 /* sh2_jit.cpp in Sources */,
 				335BC5E020D2EC890095F719 /* cheat.c in Sources */,
 				335BC5E120D2EC890095F719 /* vidsoft.c in Sources */,
 				335BC5E220D2EC890095F719 /* sh2cache.c in Sources */,
@@ -2880,6 +2962,7 @@
 				335BC60820D2EC890095F719 /* bios.c in Sources */,
 				335BC60920D2EC890095F719 /* peripheral.c in Sources */,
 				335BC60A20D2EC890095F719 /* vidshared.c in Sources */,
+				33FC0304213C24570078C165 /* sh2_dynarec.c in Sources */,
 				335BC60C20D2EC890095F719 /* YabauseC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2962,7 +3045,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 1;
+				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"HAVE_C68K=1",
 					"${inherited}",
@@ -2974,7 +3057,6 @@
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3014,7 +3096,6 @@
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3039,13 +3120,16 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = YES;
 				ENABLE_OPENMP_SUPPORT = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -3059,12 +3143,17 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.provenance.PVYabause;
 				PRODUCT_NAME = PVYabause;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				USER_HEADER_SEARCH_PATHS = "";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -3083,12 +3172,15 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_OPENMP_SUPPORT = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -3101,12 +3193,17 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.provenance.PVYabause;
 				PRODUCT_NAME = PVYabause;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -3143,10 +3240,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = NO;
 				INFOPLIST_FILE = Yabause/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.provenance.PVYabause;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -3186,9 +3286,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = NO;
 				INFOPLIST_FILE = Yabause/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.provenance.PVYabause;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -3217,7 +3320,7 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
@@ -3238,7 +3341,6 @@
 				GCC_PREFIX_HEADER = Yabause_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
-					"SWIFT_BRIDGE=1",
 					"USE_SCSP2=1",
 					CRAB_REWRITE,
 					NO_CLI,
@@ -3250,7 +3352,12 @@
 					HAVE_LIBSDL2,
 					HAVE_FBO,
 					HAVE_LIBGLES3,
+					"SWIFT_BRIDGE=1",
+					"OFF___SH2_DYNAREC=1",
+					"OFF__HAVE_ARMv6=1",
+					"OFF__HAVE_ARMv7=1",
 				);
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_FOR_PROJECT_1 = "VERSION=\\\"0.9.15\\\"";
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -3285,7 +3392,7 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
@@ -3304,7 +3411,6 @@
 				GCC_OPTIMIZATION_LEVEL = fast;
 				GCC_PREFIX_HEADER = Yabause_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"SWIFT_BRIDGE=1",
 					"USE_SCSP2=1",
 					CRAB_REWRITE,
 					NO_CLI,
@@ -3316,7 +3422,12 @@
 					HAVE_LIBSDL2,
 					HAVE_FBO,
 					HAVE_LIBGLES3,
+					"SWIFT_BRIDGE=1",
+					"OFF___SH2_DYNAREC=1",
+					"OFF__HAVE_ARMv6=1",
+					"OFF__HAVE_ARMv7=1",
 				);
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_FOR_PROJECT_1 = "VERSION=\\\"0.9.15\\\"";
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

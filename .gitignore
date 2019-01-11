@@ -1,5 +1,3 @@
-PVLibrary/Carthage/Build/
-/PVSupport/Carthage/Build
 /PVGenesis/PVGenesis.xcodeproj/xcuserdata
 /PVGBA/PVGBA.xcodeproj/xcuserdata
 /PVGB/PVGB.xcodeproj/xcuserdata
@@ -11,14 +9,11 @@ xcuserdata
 report.xml
 **/Carthage/Build
 **/Carthage/Checkouts
+!**/Cartfile*
 /build
 /fastlane/keys
 /Provenance/Version.h
 /Provenance/Version.swift
-/PVLibrary/Carthage/.Cartfile.resolved
-/Carthage/.Cartfile.resolved
-.Cartfile.tvOS.resolved
-.Cartfile.iOS.resolved
 /.version
 .DS_Store
 /DerivedData/

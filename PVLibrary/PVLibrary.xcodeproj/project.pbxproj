@@ -835,9 +835,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B32155462107D2AC0085B18E /* PVSupport.framework in Frameworks */,
 				3321F65F211B922E00138C8E /* Realm.framework in Frameworks */,
 				3321F660211B923100138C8E /* RealmSwift.framework in Frameworks */,
-				B32155462107D2AC0085B18E /* PVSupport.framework in Frameworks */,
 				B3C04B5321077CD800E7AF79 /* MobileCoreServices.framework in Frameworks */,
 				B3C04B5121077CD300E7AF79 /* CoreGraphics.framework in Frameworks */,
 				B3C04B4F21077CCF00E7AF79 /* Foundation.framework in Frameworks */,
@@ -1655,10 +1655,12 @@
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Cartfile",
+				"$(SRCROOT)/Cartfile.resolved",
 			);
 			name = Carthage;
 			outputPaths = (
-				"$(SRCROOT)/Cartfile.resolved",
+				"$(SRCROOT)/Carthage/.Cartfile.resolved",
 				"$(SRCROOT)/Carthage/.Cartfile.tvOS.resolved",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1671,12 +1673,13 @@
 			files = (
 			);
 			inputPaths = (
-				"",
+				"$(SRCROOT)/Cartfile",
+				"$(SRCROOT)/Cartfile.resolved",
 			);
 			name = Carthage;
 			outputPaths = (
 				"$(SRCROOT)/Carthage/.Cartfile.iOS.resolved",
-				"$(SRCROOT)/Cartfile.resolved",
+				"$(SRCROOT)/Carthage/.Cartfile.resolved",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
@@ -2072,7 +2075,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2130,7 +2132,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2171,7 +2172,6 @@
 				);
 				INFOPLIST_FILE = PVLibrary/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2216,7 +2216,6 @@
 				);
 				INFOPLIST_FILE = PVLibrary/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2262,7 +2261,6 @@
 				);
 				INFOPLIST_FILE = PVLibrary/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2275,7 +2273,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.1;
 			};
 			name = Debug;
 		};
@@ -2310,7 +2307,6 @@
 				);
 				INFOPLIST_FILE = PVLibrary/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2323,7 +2319,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.1;
 			};
 			name = Release;
 		};
@@ -2339,7 +2334,6 @@
 					"\"$(SRCROOT)/../PVSupport/Carthage/Build/iOS\"",
 				);
 				INFOPLIST_FILE = PVLibraryTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2368,7 +2362,6 @@
 					"\"$(SRCROOT)/../PVSupport/Carthage/Build/iOS\"",
 				);
 				INFOPLIST_FILE = PVLibraryTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

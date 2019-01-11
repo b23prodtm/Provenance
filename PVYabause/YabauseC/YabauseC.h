@@ -54,6 +54,7 @@
 #include "cd_drive.h"
 #include "yab_tsunami.h"
 #include "mpeg_card.h"
+#include "sh2_dynarec.h"
 #ifdef HAVE_C68K
 #include "c68k.h"
 #include "m68kc68k.h"

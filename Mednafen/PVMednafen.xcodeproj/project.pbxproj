@@ -538,9 +538,7 @@
 		B3FBDF2C207FF22000E661D1 /* echo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3AAAFC120736EEA0097D86F /* echo.cpp */; };
 		B3FBDF2D207FF22000E661D1 /* envelope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3AAAFC620736EEA0097D86F /* envelope.cpp */; };
 		B3FBDF2E207FF22000E661D1 /* sdsp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3AAAFC720736EEA0097D86F /* sdsp.cpp */; };
-		B3FBDF46207FF2D700E661D1 /* sjlj.c in Sources */ = {isa = PBXBuildFile; fileRef = B3AAB00220736EEA0097D86F /* sjlj.c */; };
 		B3FBDF49207FF2D700E661D1 /* libco.c in Sources */ = {isa = PBXBuildFile; fileRef = B3AAB00820736EEA0097D86F /* libco.c */; };
-		B3FBDF4A207FF2D700E661D1 /* arm.c in Sources */ = {isa = PBXBuildFile; fileRef = B3AAB00F20736EEA0097D86F /* arm.c */; };
 		B3FBDF4B207FF30A00E661D1 /* ppu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3AAB01620736EEA0097D86F /* ppu.cpp */; };
 		B3FBDF4C207FF30A00E661D1 /* memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3AAB01920736EEA0097D86F /* memory.cpp */; };
 		B3FBDF4D207FF30A00E661D1 /* mmio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3AAB01D20736EEA0097D86F /* mmio.cpp */; };
@@ -9596,7 +9594,6 @@
 				B3FBDF19207FF1CD00E661D1 /* cpu.cpp in Sources */,
 				B3FBDF64207FF35700E661D1 /* dsp2.cpp in Sources */,
 				B3FBDF1D207FF1EB00E661D1 /* gameboyheader.cpp in Sources */,
-				B3FBDF4A207FF2D700E661D1 /* arm.c in Sources */,
 				B3FBDF51207FF31200E661D1 /* bg.cpp in Sources */,
 				B3FBDF11207FF1CD00E661D1 /* scpu.cpp in Sources */,
 				B3FBDF6E207FF37C00E661D1 /* mmio.cpp in Sources */,
@@ -9669,7 +9666,6 @@
 				B3FBDF7A207FF39A00E661D1 /* serialization.cpp in Sources */,
 				B3FBDF18207FF1CD00E661D1 /* dma.cpp in Sources */,
 				B3FBDF52207FF31200E661D1 /* mode7.cpp in Sources */,
-				B3FBDF46207FF2D700E661D1 /* sjlj.c in Sources */,
 				B3FBDF24207FF20A00E661D1 /* serialization.cpp in Sources */,
 				B3FBDF03207FF19800E661D1 /* smemory.cpp in Sources */,
 				B3FBDF0D207FF1AF00E661D1 /* serialization.cpp in Sources */,
@@ -10094,14 +10090,12 @@
 					"\"$(SRCROOT)/include\"",
 					"\"$(SRCROOT)/PVMednafen\"",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/libsndfile",
 					"\"$(SRCROOT)\"",
 				);
 				LLVM_LTO = NO;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
 					"$(inherited)",
@@ -10115,7 +10109,6 @@
 					"-Wdisabled-optimization",
 				);
 				SDKROOT = iphoneos;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -10212,14 +10205,12 @@
 					"\"$(SRCROOT)/include\"",
 					"\"$(SRCROOT)/PVMednafen\"",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/libsndfile",
 					"\"$(SRCROOT)\"",
 				);
 				LLVM_LTO = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"$(inherited)",
@@ -10264,7 +10255,6 @@
 				);
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
@@ -11784,7 +11774,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = PVMednafen/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -11792,7 +11781,10 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.provenance-emu.PVMednafen";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -11846,14 +11838,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = PVMednafen/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.provenance-emu.PVMednafen";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -11918,7 +11912,10 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.provenance-emu.PVMednafen";
 				PRODUCT_NAME = PVMednafen;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -11929,7 +11926,6 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.1;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/PVMednafen\"";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -11978,7 +11974,10 @@
 					"@loader_path/Frameworks",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.provenance-emu.PVMednafen";
 				PRODUCT_NAME = PVMednafen;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -11988,7 +11987,6 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.1;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/PVMednafen\"";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";

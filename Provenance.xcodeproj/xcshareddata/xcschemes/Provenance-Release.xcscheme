@@ -112,20 +112,6 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B340E4611E08887600AD0E8B"
-               BuildableName = "PVMednafen.framework"
-               BlueprintName = "PVMednafen"
-               ReferencedContainer = "container:Mednafen/PVMednafen.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "B37EFF371C72F43300857158"
                BuildableName = "PVMupen64Plus.framework"
                BlueprintName = "PVMupen64Plus"
@@ -270,6 +256,20 @@
                BuildableName = "PVYabause.framework"
                BlueprintName = "PVYabause"
                ReferencedContainer = "container:PVYabause/PVYabause.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B340E4611E08887600AD0E8B"
+               BuildableName = "PVMednafen.framework"
+               BlueprintName = "PVMednafen"
+               ReferencedContainer = "container:Mednafen/PVMednafen.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry

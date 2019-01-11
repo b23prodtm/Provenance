@@ -1,6 +1,3 @@
-
-[![Build Status](https://travis-ci.org/ZipArchive/ZipArchive.svg?branch=master)](https://travis-ci.org/ZipArchive/ZipArchive)
-
 # SSZipArchive
 
 ZipArchive is a simple utility class for zipping and unzipping files on iOS, macOS and tvOS.
@@ -20,6 +17,11 @@ ZipArchive is a simple utility class for zipping and unzipping files on iOS, mac
 *The main release branch is configured to support Objective C and Swift 3+.*
 
 SSZipArchive works on Xcode 7-9 and above, iOS 8-11 and above.
+
+## Build Status
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
+[![Build Status](https://travis-ci.org/ZipArchive/ZipArchive.svg?branch=master)](https://travis-ci.org/ZipArchive/ZipArchive)
 
 ### CocoaPods
 In your Podfile:  

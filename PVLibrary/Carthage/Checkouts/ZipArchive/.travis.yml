@@ -1,87 +1,69 @@
 language: objective-c
-podfile: ObjectiveCExample/Podfile
-xcode_workspace: ObjectiveCExample/ObjectiveCExample.xcworkspace
+xcode_project: ZipArchive.xcodeproj
+osx_image: xcode9.4
+cache:
+  directories:
+    - Carthage
+#
+# Edit Cartfile and Cartfile.resolved (those file might be empty if there isn't any dependency)
+# Configure all ObjectiveC variables (TRAVIS_*).
+# Add platform specific arguments as env: VAR1=value VAR2=value
+#
+env:
+  global:
+    - CARTHAGE_PROJECT_DIR=.
+    - CONFIGURATION=Release
 matrix:
   include:
-    - osx_image: xcode9 # OS X 10.12
-      env: SDK="macosx"
-           DEVICE="OS X 10.12"
-           
-    - osx_image: xcode8.3 # OS X 10.12
-      env: SDK="macosx"
-           DEVICE="OS X 10.12"
-           
-    - osx_image: xcode7.3 # OS X 10.11
-      env: SDK="macosx"
-           DEVICE="OS X 10.11"
-           
-    - osx_image: xcode9
-      env: SDK="appletvsimulator"
-           DEVICE="Apple TV 4K (11.0)" # oldest/newest for tvOS 11.x
-           
-    - osx_image: xcode8.3
-      env: SDK="appletvsimulator"
-           DEVICE="Apple TV 1080p (10.2)" # latest for tvOS 10.x
-           
-    - osx_image: xcode8.3
-      env: SDK="appletvsimulator"
-           DEVICE="Apple TV 1080p (9.2)" # latest for tvOS 9.x
-           
-    - osx_image: xcode7.3
-      env: SDK="appletvsimulator"
-           DEVICE="Apple TV 1080p (9.0)" # oldest for tvOS 9.x
-           
-    - osx_image: xcode9
-      env: SDK="iphonesimulator"
-           DEVICE="iPhone X (11.0)" # oldest/newest for iOS 11.x
-           
-    - osx_image: xcode9
-      env: SDK="iphonesimulator"
-           DEVICE="iPhone 7 Plus (10.3.1)" # latest for iOS 10.x
-           
-    - osx_image: xcode8.3
-      env: SDK="iphonesimulator"
-           DEVICE="iPhone 5 (10.0)" # oldest for iOS 10.x
-           
-    - osx_image: xcode8.3
-      env: SDK="iphonesimulator"
-           DEVICE="iPhone 6s Plus (9.3)" # latest for iOS 9.x
-           
-    - osx_image: xcode7.3
-      env: SDK="iphonesimulator"
-           DEVICE="iPhone 4s (9.0)" # oldest for iOS 9.x
-           
-    - osx_image: xcode7.3
-      env: SDK="iphonesimulator"
-           DEVICE="iPhone 6 Plus (8.4)" # latest for iOS 8.x
-           
-    - osx_image: xcode7.3
-      env: SDK="iphonesimulator"
-           DEVICE="iPhone 4s (8.1)" # oldest for iOS 8.x
-
+  - xcode_scheme: ZipArchive-Mac
+    xcode_sdk: macosx10.13
+    env: PLATFORM=macOS FRAMEWORK_NAME=ZipArchive DESTINATION="platform=OS X,arch=x86_64"
+  - xcode_scheme: ZipArchive-iOS
+    xcode_sdk: iphonesimulator11.4
+    env: PLATFORM=iOS FRAMEWORK_NAME=ZipArchive DESTINATION="platform=iOS Simulator,OS=11.4,name=iPhone
+      X"
+  - xcode_scheme: ZipArchive-tvos
+    xcode_sdk: appletvsimulator11.4
+    env: PLATFORM=tvOS FRAMEWORK_NAME=ZipArchive DESTINATION="platform=tvOS Simulator,OS=11.4,name=Apple
+      TV"
+  - xcode_scheme: ZipArchive-watchos
+    xcode_sdk: watchsimulator4.3
+    env: PLATFORM=watchOS FRAMEWORK_NAME=ZipArchive DESTINATION="platform=watchOS Simulator,OS=4.3,name=Apple
+      Watch - 42mm"
 before_install:
-  - if [ ${SDK} = "macosx" ]; then
-        SCHEME="ObjectiveCExample_macOS";
-    elif [ ${SDK} = "appletvsimulator" ]; then
-        SCHEME="ObjectiveCExample_tvOS";
-    else
-        SCHEME="ObjectiveCExample_iOS";
-    fi
-  - if [ ${SDK} = "macosx" ]; then
-        DESTINATION="platform=macosx";
-    else
-        DESTINATION_UDID=$(instruments -s devices | grep "$DEVICE \[" | sed -E 's/.*\[([0-9A-F-]+)\].*/\1/g');
-        `Prelaunching simulator to avoid timeout https://github.com/travis-ci/travis-ci/issues/6422`
-        open -a Simulator --args -CurrentDeviceUDID $DESTINATION_UDID;
-        DESTINATION="id=$DESTINATION_UDID";
-    fi
-
+# Formatting travis log output
+- gem install xcpretty -N
+- gem install xcpretty-travis-formatter --no-rdoc --no-ri --no-document --quiet
+# Carthage installer
+- brew update
+- brew outdated carthage || brew upgrade carthage
+before_script:
+# Comment out this bootstrap if there isn't any dependency
+# - carthage bootstrap --project-directory $CARTHAGE_PROJECT_DIR
+before_deploy:
+# Set up git user name and tag this commit
+# requires travis repository settings variables (GIT_*)
+- git config --local user.name "$GIT_USER"
+- git config --local user.email "$GIT_EMAIL"
+- git tag --force "v${GIT_RELEASE_VERSION}.${TRAVIS_BUILD_NUMBER}"
+- cd $CARTHAGE_PROJECT_DIR
+- carthage build --configuration $CONFIGURATION --cache-builds --no-skip-current #--platform $PLATFORM
+- carthage archive $FRAMEWORK_NAME
 script:
-  # Testing
-  - xcodebuild
-    `` -workspace ObjectiveCExample/ObjectiveCExample.xcworkspace
-    `` -scheme $SCHEME
-    `` -sdk $SDK
-    `` -destination "$DESTINATION"
-    `` -configuration Debug ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES
-    `` test
+# Replaces the default built-in xcodebuild command with specified parameters
+- xcodebuild -project $TRAVIS_XCODE_PROJECT -scheme $TRAVIS_XCODE_SCHEME -destination
+  "$DESTINATION" -sdk "$TRAVIS_XCODE_SDK" -configuration $CONFIGURATION CODE_SIGNING_REQUIRED=NO
+  $XC_ACTION | xcpretty -f `xcpretty-travis-formatter`
+#
+# Deployment generated with local CLI travis setup releases --force, with secured github token.
+# Enter ${FRAMEWORK_NAME}.framework.zip as the file to upload when prompted.
+#
+deploy:
+  provider: releases
+  api_key:
+    secure: apFjMiC35bMcKx1QYVDpAaCfQOf7Py4Y/fkPcCLeHVWnNIA3s4vdJVdVhCOnEI9e/9NSSOYwOF8vBaXlHsD58ye71J4UiW3thfZ8FJx/DJ17qKtGL+N+bHQiZnlg2fnz3TWmGsf1e1xiUDg0nvp2/f+b2VCKnNheEOuNKUtCBBVuGMg+3DIjY/ufaffWTQPMUhbG2xnNHTlizIfUfGd2H1B9zCtWXmn9MOS9xNEiiqAs1ymOSTLUsJR98QHUoxo1LFYr4g3a8M1UNBk0wHxleRhW5G56me8YNwmgZFAC7bBPCRK4qR1NgajCysL1523lD55eUUpxE5XwF0xqeZUuHNkbJvANXIqBRD336fyxkNNTH7/khkd4UZseW3qbgVke4ohoFap7gXEX+AatdhqIkZN1A7jaSOJg819kBbX1il3y9VKeGfqvrsOkjT3iHuQ3Z6bE8066kGFIhQnJcPcXxFdGc3ygbjcL1vGERN9p0EisqTU9OoaWuQ6pBnOyEiiSdHo3qsbvoKxtOFZnbzZHM3NH00RUIvAFqxwnTH4y+5nyXDkOC3b5UIZ3H7DYvUFVyLqQddpUu1wQ/Rw5GATE3WTND6LWTdTciI6XeBLilBavZvXqEzHp/g2NAMhL3uMZ7kkvuMQq2UbS2m1H5821+xtCe4zo14tAxc6eqMTBwCo=
+  file: "${FRAMEWORK_NAME}.framework.zip"
+  skip_cleanup: true
+  on:
+    repo: b23prodtm/ZipArchive
+    branch: feature/*

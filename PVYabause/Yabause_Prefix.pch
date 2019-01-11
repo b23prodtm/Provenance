@@ -9,5 +9,6 @@
 #ifdef __OBJC__
 #import <Foundation/Foundation.h>
 #endif
-
-#define VERSION "0.9.10"
+#if defined(__APPLE__)
+#import <TargetConditionals.h>
+#endif
